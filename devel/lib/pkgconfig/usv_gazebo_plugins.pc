@@ -1,0 +1,8 @@
+prefix=/home/scar1et/vrx_ws/devel
+
+Name: usv_gazebo_plugins
+Description: Description of usv_gazebo_plugins
+Version: 1.1.2
+Cflags: -I/home/scar1et/vrx_ws/src/vrx/usv_gazebo_plugins/include
+Libs: -L/home/scar1et/vrx_ws/devel/lib 
+Requires: message_runtime gazebo_dev roscpp wave_gazebo_plugins

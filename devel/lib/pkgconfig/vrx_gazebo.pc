@@ -1,0 +1,8 @@
+prefix=/home/scar1et/vrx_ws/devel
+
+Name: vrx_gazebo
+Description: Description of vrx_gazebo
+Version: 1.1.2
+Cflags: -I/home/scar1et/vrx_ws/devel/include -I/home/scar1et/vrx_ws/src/vrx/vrx_gazebo/include
+Libs: -L/home/scar1et/vrx_ws/devel/lib 
+Requires: wamv_gazebo xacro gazebo_dev geographic_msgs std_msgs message_runtime

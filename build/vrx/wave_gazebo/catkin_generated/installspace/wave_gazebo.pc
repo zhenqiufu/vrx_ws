@@ -1,0 +1,8 @@
+prefix=/home/scar1et/vrx_ws/install
+
+Name: wave_gazebo
+Description: Description of wave_gazebo
+Version: 1.1.2
+Cflags: 
+Libs: -L/home/scar1et/vrx_ws/install/lib 
+Requires: xacro

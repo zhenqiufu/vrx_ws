@@ -1,0 +1,6 @@
+set(vrx_gazebo_SETUP_PY_VERSION "1.1.2")
+set(vrx_gazebo_SETUP_PY_SCRIPTS "")
+set(vrx_gazebo_SETUP_PY_PACKAGES "vrx_gazebo_python")
+set(vrx_gazebo_SETUP_PY_PACKAGE_DIRS "src/vrx_gazebo_python")
+set(vrx_gazebo_SETUP_PY_MODULES "")
+set(vrx_gazebo_SETUP_PY_MODULE_DIRS "")

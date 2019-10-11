@@ -1,0 +1,23 @@
+\subsubsection usage Usage
+\verbatim
+<node name="thrustallocation" pkg="dp_core" type="thrustallocation">
+  <param name="propeller_K_positive" type="str" value="0.025, 0.025, 0.025, 0.025" />
+  <param name="propeller_K_negtive" type="str" value="0.01, 0.01, 0.01, 0.01" />
+  <param name="propeller_max_rotation" type="str" value="100,100,100,100" />
+  <param name="propeller_min_rotation" type="str" value="2, 2, 2, 2" />
+  <param name="propeller_max_alfa" type="str" value="3.32,   0.0174, 3.32, 0.0174 " />
+  <param name="propeller_min_alfa" type="str" value="-0.0174,-3.32,  -0.0174,-3.32" />
+  <param name="propeller_delta_alfa" type="str" value="0.157, 0.157,0.157,0.157" />
+  <param name="propeller_delta_rotation" type="str" value="50,50,50,50" />
+  <param name="max_target_force" type="str" value="250,250,250,250" />
+  <param name="min_target_force" type="str" value="0,0,0,0" />
+  <param name="allman_switch" type="bool" value="True" />
+  <param name="dp_switch" type="bool" value="False" />
+  <param name="UTMx_switch" type="bool" value="False" />
+  <param name="UTMy_switch" type="bool" value="False" />
+  <param name="head_switch" type="bool" value="False" />
+  <param name="debug_mode" type="bool" value="False" />
+  <param name="log_level" type="int" value="0" />
+</node>
+\endverbatim
+
