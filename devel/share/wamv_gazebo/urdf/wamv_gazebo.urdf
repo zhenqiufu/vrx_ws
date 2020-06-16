@@ -4,12 +4,12 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <!-- Basic WAM-V with gazebo plugins for dynamics -->
-<robot name="WAM-V" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="WAM-V">
   <link name="left_battery_link">
     <visual name="left_battery_visual">
       <origin rpy="0 0 0" xyz="0 -1.03 -.45"/>
       <geometry>
-        <mesh filename="model://battery/mesh/battery.dae"/>
+        <mesh filename="package://vrx_gazebo/models/battery/mesh/battery.dae"/>
       </geometry>
     </visual>
     <collision name="left_battery_collision">
@@ -33,7 +33,7 @@
     <visual name="right_battery_visual">
       <origin rpy="0 0 0" xyz="0 -1.03 -.45"/>
       <geometry>
-        <mesh filename="model://battery/mesh/battery.dae"/>
+        <mesh filename="package://vrx_gazebo/models/battery/mesh/battery.dae"/>
       </geometry>
     </visual>
     <collision name="right_battery_collision">
@@ -63,7 +63,7 @@
   <link name="dummy_link">
     <visual>
       <geometry>
-        <mesh filename="package://wamv_description/mesh/WAM-V-Base.dae"/>
+        <mesh filename="package://wamv_description/models/WAM-V-Base/mesh/WAM-V-Base.dae"/>
       </geometry>
     </visual>
     <!-- Main float -->
@@ -236,7 +236,7 @@
   <link name="left_engine_link">
     <visual>
       <geometry>
-        <mesh filename="package://wamv_description/mesh/engine.dae"/>
+        <mesh filename="package://wamv_description/models/engine/mesh/engine.dae"/>
       </geometry>
     </visual>
     <collision name="left_engine_vertical_axis_collision">
@@ -259,7 +259,7 @@
   <link name="left_propeller_link">
     <visual>
       <geometry>
-        <mesh filename="package://wamv_description/mesh/propeller.dae"/>
+        <mesh filename="package://wamv_description/models/propeller/mesh/propeller.dae"/>
       </geometry>
     </visual>
     <collision name="left_propeller_collision">
@@ -291,7 +291,7 @@
   <link name="right_engine_link">
     <visual>
       <geometry>
-        <mesh filename="package://wamv_description/mesh/engine.dae"/>
+        <mesh filename="package://wamv_description/models/engine/mesh/engine.dae"/>
       </geometry>
     </visual>
     <collision name="right_engine_vertical_axis_collision">
@@ -314,7 +314,7 @@
   <link name="right_propeller_link">
     <visual>
       <geometry>
-        <mesh filename="package://wamv_description/mesh/propeller.dae"/>
+        <mesh filename="package://wamv_description/models/propeller/mesh/propeller.dae"/>
       </geometry>
     </visual>
     <collision name="right_propeller_collision">
@@ -344,15 +344,16 @@
     <dynamics damping="0.05" friction="0.05"/>
   </joint>
   <gazebo>
-    <plugin filename="libusv_gazebo_thrust_plugin.so" name="wamv_gazebo_thrust" xmlns:xacro="http://ros.org/wiki/xacro">
+    <plugin filename="libusv_gazebo_thrust_plugin.so" name="wamv_gazebo_thrust">
       <cmdTimeout>1.0</cmdTimeout>
+      <robotNamespace>wamv</robotNamespace>
       <thruster>
         <!-- Required Parameters -->
         <linkName>left_propeller_link</linkName>
         <propJointName>left_engine_propeller_joint</propJointName>
         <engineJointName>left_chasis_engine_joint</engineJointName>
-        <cmdTopic>left_thrust_cmd</cmdTopic>
-        <angleTopic>left_thrust_angle</angleTopic>
+        <cmdTopic>thrusters/left_thrust_cmd</cmdTopic>
+        <angleTopic>thrusters/left_thrust_angle</angleTopic>
         <enableAngle>true</enableAngle>
         <!-- Optional Parameters -->
         <mappingType>1</mappingType>
@@ -366,8 +367,8 @@
         <linkName>right_propeller_link</linkName>
         <propJointName>right_engine_propeller_joint</propJointName>
         <engineJointName>right_chasis_engine_joint</engineJointName>
-        <cmdTopic>right_thrust_cmd</cmdTopic>
-        <angleTopic>right_thrust_angle</angleTopic>
+        <cmdTopic>thrusters/right_thrust_cmd</cmdTopic>
+        <angleTopic>thrusters/right_thrust_angle</angleTopic>
         <enableAngle>true</enableAngle>
         <!-- Optional Parameters -->
         <mappingType>1</mappingType>

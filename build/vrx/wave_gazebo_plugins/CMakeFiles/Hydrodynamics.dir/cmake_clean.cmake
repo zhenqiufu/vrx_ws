@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/skloe/vrx_ws/devel/lib/libHydrodynamics.pdb"
+  "/home/skloe/vrx_ws/devel/lib/libHydrodynamics.so"
   "CMakeFiles/Hydrodynamics.dir/src/Gazebo.cc.o"
   "CMakeFiles/Hydrodynamics.dir/src/Geometry.cc.o"
   "CMakeFiles/Hydrodynamics.dir/src/PhysicalConstants.cc.o"
@@ -6,8 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Hydrodynamics.dir/src/Utilities.cc.o"
   "CMakeFiles/Hydrodynamics.dir/src/Wavefield.cc.o"
   "CMakeFiles/Hydrodynamics.dir/src/WavefieldEntity.cc.o"
-  "/home/scar1et/vrx_ws/devel/lib/libHydrodynamics.pdb"
-  "/home/scar1et/vrx_ws/devel/lib/libHydrodynamics.so"
 )
 
 # Per-language clean rules from dependency scanning.

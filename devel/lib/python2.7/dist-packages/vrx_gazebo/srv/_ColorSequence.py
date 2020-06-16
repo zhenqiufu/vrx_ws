@@ -9,10 +9,10 @@ import struct
 class ColorSequenceRequest(genpy.Message):
   _md5sum = "814c89d706310e11e30ed83a7a64e7e3"
   _type = "vrx_gazebo/ColorSequenceRequest"
-  _has_header = False #flag to mark the presence of a Header object
-  _full_text = """
+  _has_header = False  # flag to mark the presence of a Header object
+  _full_text = """# Color sequence submission
 
-
+# Color sequence
 string color1
 string color2
 string color3
@@ -37,7 +37,7 @@ string color3
     """
     if args or kwds:
       super(ColorSequenceRequest, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.color1 is None:
         self.color1 = ''
       if self.color2 is None:
@@ -118,7 +118,7 @@ string color3
         self.color3 = str[start:end]
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -186,7 +186,7 @@ string color3
         self.color3 = str[start:end]
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():
@@ -203,7 +203,7 @@ import struct
 class ColorSequenceResponse(genpy.Message):
   _md5sum = "358e233cde0c8a8bcfea4ce193f8fc15"
   _type = "vrx_gazebo/ColorSequenceResponse"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False  # flag to mark the presence of a Header object
   _full_text = """bool success
 
 """
@@ -226,7 +226,7 @@ class ColorSequenceResponse(genpy.Message):
     """
     if args or kwds:
       super(ColorSequenceResponse, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.success is None:
         self.success = False
     else:
@@ -244,7 +244,8 @@ class ColorSequenceResponse(genpy.Message):
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_get_struct_B().pack(self.success))
+      _x = self.success
+      buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -261,7 +262,7 @@ class ColorSequenceResponse(genpy.Message):
       self.success = bool(self.success)
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -271,7 +272,8 @@ class ColorSequenceResponse(genpy.Message):
     :param numpy: numpy python module
     """
     try:
-      buff.write(_get_struct_B().pack(self.success))
+      _x = self.success
+      buff.write(_get_struct_B().pack(_x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -289,7 +291,7 @@ class ColorSequenceResponse(genpy.Message):
       self.success = bool(self.success)
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():

@@ -22,10 +22,12 @@
 #include <gazebo/physics/Model.hh>
 #include <ignition/math/Quaternion.hh>
 #include <ignition/math/Vector3.hh>
+
 #include "vrx_gazebo/stationkeeping_scoring_plugin.hh"
 
 /////////////////////////////////////////////////
 StationkeepingScoringPlugin::StationkeepingScoringPlugin()
+  : waypointMarkers("station_keeping_marker")
 {
   gzmsg << "Stationkeeping scoring plugin loaded" << std::endl;
 
@@ -85,11 +87,29 @@ void StationkeepingScoringPlugin::Load(gazebo::physics::WorldPtr _world,
 
   this->poseErrorPub = this->rosNode->advertise<std_msgs::Float64>(
     this->poseErrorTopic, 100);
-  this->rmsErrorPub  = this->rosNode->advertise<std_msgs::Float64>(
-    this->rmsErrorTopic, 100);
+  this->meanErrorPub  = this->rosNode->advertise<std_msgs::Float64>(
+    this->meanErrorTopic, 100);
 
   this->updateConnection = gazebo::event::Events::ConnectWorldUpdateBegin(
     std::bind(&StationkeepingScoringPlugin::Update, this));
+
+  if (_sdf->HasElement("markers"))
+  {
+    this->waypointMarkers.Load(_sdf->GetElement("markers"));
+    if (this->waypointMarkers.IsAvailable())
+    {
+      if (!this->waypointMarkers.DrawMarker(0, this->goalX, this->goalY,
+            this->goalYaw))
+      {
+        gzerr << "Error creating visual marker" << std::endl;
+      }
+    }
+    else
+    {
+      gzwarn << "Cannot display gazebo markers (Gazebo version < 8)"
+        << std::endl;
+    }
+  }
 }
 
 //////////////////////////////////////////////////
@@ -112,7 +132,7 @@ void StationkeepingScoringPlugin::Update()
     return;
 
   std_msgs::Float64 poseErrorMsg;
-  std_msgs::Float64 rmsErrorMsg;
+  std_msgs::Float64 meanErrorMsg;
 
   #if GAZEBO_MAJOR_VERSION >= 8
     const auto robotPose = this->vehicleModel->WorldPose();
@@ -123,29 +143,28 @@ void StationkeepingScoringPlugin::Update()
   double currentHeading = robotPose.Rot().Euler().Z();
   double dx   =  this->goalX - robotPose.Pos().X();
   double dy   =  this->goalY - robotPose.Pos().Y();
-  double dhdg =  this->goalYaw - currentHeading;
+  double dhdg =  abs(this->goalYaw - currentHeading);
+  double headError = 1 - abs(dhdg - M_PI)/M_PI;
 
-  double sqError =  pow(dx, 2) + pow(dy, 2) + pow(dhdg, 2);
-
-  this->poseError  = sqrt(sqError);
-  this->totalSquaredError += sqError;
+  this->poseError  = sqrt(pow(dx, 2) + pow(dy, 2)) + headError;
+  this->totalPoseError += this->poseError;
   this->sampleCount++;
 
-  this->rmsError = sqrt(this->totalSquaredError / this->sampleCount);
+  this->meanError = this->totalPoseError / this->sampleCount;
 
   poseErrorMsg.data = this->poseError;
-  rmsErrorMsg.data = this->rmsError;
+  meanErrorMsg.data = this->meanError;
 
   // Publish at 1 Hz.
   if (this->timer.GetElapsed() >= gazebo::common::Time(1.0))
   {
     this->poseErrorPub.publish(poseErrorMsg);
-    this->rmsErrorPub.publish(rmsErrorMsg);
+    this->meanErrorPub.publish(meanErrorMsg);
     this->timer.Reset();
     this->timer.Start();
   }
 
-  this->ScoringPlugin::SetScore(this->rmsError);
+  this->ScoringPlugin::SetScore(this->meanError);
 }
 
 //////////////////////////////////////////////////
@@ -186,7 +205,6 @@ void StationkeepingScoringPlugin::OnRunning()
 
   this->timer.Start();
 }
-
 
 
 // Register plugin with gazebo

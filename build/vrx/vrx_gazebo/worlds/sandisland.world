@@ -4,8 +4,8 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <!-- World containing only sandisland model -->
-<sdf version="1.6" xmlns:xacro="http://ros.org/wiki/xacro">
-  <world name="sandisland" xmlns:xacro="http://ros.org/wiki/xacro">
+<sdf version="1.6">
+  <world name="sandisland">
     <scene>
       <sky>
         <clouds>
@@ -128,6 +128,10 @@
       <link name="ocean_waves_link">
         <visual name="ocean_waves_visual">
           <plugin filename="libWavefieldVisualPlugin.so" name="ocean_waves_visual_plugin">
+            <enableRtt>true</enableRtt>
+            <rttNoise>0.1</rttNoise>
+            <refractOpacity>0.2</refractOpacity>
+            <reflectOpacity>0.2</reflectOpacity>
             <wave>
               <model>PMS</model>
               <period>5</period>
@@ -156,21 +160,8 @@
           <laser_retro>-1</laser_retro>
         </visual>
         <visual name="ocean_waves_below_visual">
-          <plugin filename="libWavefieldVisualPlugin.so" name="ocean_waves_below_visual_plugin">
-            <wave>
-              <model>PMS</model>
-              <period>5</period>
-              <number>3</number>
-              <scale>1.5</scale>
-              <gain>0.1</gain>
-              <direction>1.0 0.0</direction>
-              <angle>0.4</angle>
-              <tau>2.0</tau>
-              <amplitude>0.0</amplitude>
-              <!-- No effect for the PMS model -->
-              <steepness>0.0</steepness>
-            </wave>
-          </plugin>
+          <pose>0 0 -0.05 0 0 0</pose>
+          <!-- Offset to prevent rendering conflict -->
           <geometry>
             <mesh>
               <uri>model://ocean_waves/meshes/mesh_below.dae</uri>

@@ -96,6 +96,27 @@ ros::message_operations::Printer< ::vrx_gazebo::Task_<ContainerAllocator> >::str
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::vrx_gazebo::Task_<ContainerAllocator1> & lhs, const ::vrx_gazebo::Task_<ContainerAllocator2> & rhs)
+{
+  return lhs.name == rhs.name &&
+    lhs.state == rhs.state &&
+    lhs.ready_time == rhs.ready_time &&
+    lhs.running_time == rhs.running_time &&
+    lhs.elapsed_time == rhs.elapsed_time &&
+    lhs.remaining_time == rhs.remaining_time &&
+    lhs.timed_out == rhs.timed_out &&
+    lhs.score == rhs.score;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::vrx_gazebo::Task_<ContainerAllocator1> & lhs, const ::vrx_gazebo::Task_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace vrx_gazebo
 
 namespace ros
@@ -103,12 +124,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'vrx_gazebo': ['/home/scar1et/vrx_ws/src/vrx/vrx_gazebo/msg'], 'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

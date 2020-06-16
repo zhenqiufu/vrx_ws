@@ -1,4 +1,5 @@
-set(vrx_gazebo_SETUP_PY_VERSION "1.1.2")
+set(vrx_gazebo_SETUP_PY_SETUP_MODULE "distutils.core")
+set(vrx_gazebo_SETUP_PY_VERSION "1.3.0")
 set(vrx_gazebo_SETUP_PY_SCRIPTS "")
 set(vrx_gazebo_SETUP_PY_PACKAGES "vrx_gazebo_python")
 set(vrx_gazebo_SETUP_PY_PACKAGE_DIRS "src/vrx_gazebo_python")

@@ -10,7 +10,7 @@ import genpy
 class Task(genpy.Message):
   _md5sum = "c588f6342ff17e31f535731fede10fd5"
   _type = "vrx_gazebo/Task"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False  # flag to mark the presence of a Header object
   _full_text = """# Task name.
 string name
 
@@ -56,7 +56,7 @@ float64 score
     """
     if args or kwds:
       super(Task, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.name is None:
         self.name = ''
       if self.state is None:
@@ -156,7 +156,7 @@ float64 score
       self.remaining_time.canon()
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -228,7 +228,7 @@ float64 score
       self.remaining_time.canon()
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():

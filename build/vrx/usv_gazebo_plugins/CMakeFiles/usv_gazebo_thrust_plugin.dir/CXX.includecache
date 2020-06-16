@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/scar1et/vrx_ws/src/vrx/usv_gazebo_plugins/include/usv_gazebo_plugins/usv_gazebo_thrust_plugin.hh
+/home/skloe/vrx_ws/src/vrx/usv_gazebo_plugins/include/usv_gazebo_plugins/usv_gazebo_thrust_plugin.hh
 ros/ros.h
 -
 std_msgs/Float32.h
@@ -32,7 +32,7 @@ gazebo/physics/physics.hh
 sdf/sdf.hh
 -
 
-/home/scar1et/vrx_ws/src/vrx/usv_gazebo_plugins/src/usv_gazebo_thrust_plugin.cc
+/home/skloe/vrx_ws/src/vrx/usv_gazebo_plugins/src/usv_gazebo_thrust_plugin.cc
 boost/algorithm/clamp.hpp
 -
 ros/time.h
@@ -42,7 +42,7 @@ cmath
 functional
 -
 usv_gazebo_plugins/usv_gazebo_thrust_plugin.hh
-/home/scar1et/vrx_ws/src/vrx/usv_gazebo_plugins/src/usv_gazebo_plugins/usv_gazebo_thrust_plugin.hh
+/home/skloe/vrx_ws/src/vrx/usv_gazebo_plugins/src/usv_gazebo_plugins/usv_gazebo_thrust_plugin.hh
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h
@@ -905,10 +905,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/common/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/common/Image.hh
-Winsock2.h
--
-FreeImage.h
--
 string
 -
 ignition/math/Color.hh
@@ -939,8 +935,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/common/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/common/Plugin.hh
-Winsock2.h
--
 unistd.h
 -
 sys/types.h
@@ -1275,6 +1269,8 @@ topic_info.pb.h
 /usr/include/gazebo-9/gazebo/msgs/topic_info.pb.h
 track_visual.pb.h
 /usr/include/gazebo-9/gazebo/msgs/track_visual.pb.h
+twist.pb.h
+/usr/include/gazebo-9/gazebo/msgs/twist.pb.h
 undo_redo.pb.h
 /usr/include/gazebo-9/gazebo/msgs/undo_redo.pb.h
 user_cmd.pb.h
@@ -4836,6 +4832,38 @@ gazebo/util/system.hh
 gazebo/msgs/MsgFactory.hh
 /usr/include/gazebo-9/gazebo/msgs/gazebo/msgs/MsgFactory.hh
 
+/usr/include/gazebo-9/gazebo/msgs/twist.pb.h
+string
+-
+google/protobuf/stubs/common.h
+-
+google/protobuf/arena.h
+-
+google/protobuf/arenastring.h
+-
+google/protobuf/generated_message_util.h
+-
+google/protobuf/metadata.h
+-
+google/protobuf/message.h
+-
+google/protobuf/repeated_field.h
+-
+google/protobuf/extension_set.h
+-
+google/protobuf/unknown_field_set.h
+-
+vector3d.pb.h
+/usr/include/gazebo-9/gazebo/msgs/vector3d.pb.h
+header.pb.h
+/usr/include/gazebo-9/gazebo/msgs/header.pb.h
+boost/shared_ptr.hpp
+-
+gazebo/util/system.hh
+-
+gazebo/msgs/MsgFactory.hh
+/usr/include/gazebo-9/gazebo/msgs/gazebo/msgs/MsgFactory.hh
+
 /usr/include/gazebo-9/gazebo/msgs/undo_redo.pb.h
 string
 -
@@ -5351,8 +5379,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/Base.hh
-Winsock2.h
--
 boost/enable_shared_from_this.hpp
 -
 string
@@ -5443,8 +5469,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/CylinderShape.hh
-Winsock2.h
--
 gazebo/physics/Shape.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/physics/Shape.hh
 gazebo/util/system.hh
@@ -5485,8 +5509,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/GearboxJoint.hh
-Winsock2.h
--
 string
 -
 gazebo/msgs/msgs.hh
@@ -5539,8 +5561,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/Inertial.hh
-Winsock2.h
--
 string
 -
 memory
@@ -5609,8 +5629,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/JointState.hh
-Winsock2.h
--
 vector
 -
 string
@@ -5643,8 +5661,6 @@ gazebo/physics/State.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/physics/State.hh
 
 /usr/include/gazebo-9/gazebo/physics/Link.hh
-Winsock2.h
--
 map
 -
 vector
@@ -5835,8 +5851,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/PolylineShape.hh
-Winsock2.h
--
 vector
 -
 gazebo/physics/Shape.hh
@@ -5915,8 +5929,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/Shape.hh
-Winsock2.h
--
 string
 -
 ignition/math/Vector3.hh
@@ -5939,8 +5951,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/SphereShape.hh
-Winsock2.h
--
 gazebo/physics/Shape.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/physics/Shape.hh
 gazebo/physics/PhysicsTypes.hh
@@ -5949,8 +5959,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/State.hh
-Winsock2.h
--
 string
 -
 sdf/sdf.hh
@@ -6007,8 +6015,6 @@ gazebo/util/system.hh
 /usr/include/gazebo-9/gazebo/physics/gazebo/util/system.hh
 
 /usr/include/gazebo-9/gazebo/physics/World.hh
-Winsock2.h
--
 vector
 -
 list
@@ -11821,154 +11827,4 @@ sdf/sdf_config.h
 /usr/include/sdformat-6.2/sdf/sdf_config.h
 
 /usr/include/sdformat-6.2/sdf/system_util.hh
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h
-bits/wordsize.h
--
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h
-bits/thread-shared-types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/select.h
-bits/wordsize.h
--
-
-/usr/include/x86_64-linux-gnu/bits/select2.h
-
-/usr/include/x86_64-linux-gnu/bits/stat.h
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/sysmacros.h
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h
-bits/pthreadtypes-arch.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types.h
-features.h
--
-bits/wordsize.h
--
-bits/typesizes.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h
-bits/types/__sigset_t.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/types/timer_t.h
-bits/types.h
--
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h
-
-/usr/include/x86_64-linux-gnu/sys/select.h
-features.h
--
-bits/types.h
--
-bits/select.h
--
-bits/types/sigset_t.h
--
-bits/types/time_t.h
--
-bits/types/struct_timeval.h
--
-bits/types/struct_timespec.h
--
-bits/select2.h
--
-
-/usr/include/x86_64-linux-gnu/sys/stat.h
-features.h
--
-bits/types.h
--
-bits/types/struct_timespec.h
--
-bits/types/time_t.h
--
-bits/stat.h
--
-
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h
-features.h
--
-bits/types.h
--
-bits/sysmacros.h
--
-
-/usr/include/x86_64-linux-gnu/sys/time.h
-features.h
--
-bits/types.h
--
-bits/types/time_t.h
--
-bits/types/struct_timeval.h
--
-sys/select.h
--
-
-/usr/include/x86_64-linux-gnu/sys/timeb.h
-features.h
--
-bits/types/time_t.h
--
-
-/usr/include/x86_64-linux-gnu/sys/types.h
-features.h
--
-bits/types.h
--
-bits/types/clock_t.h
--
-bits/types/clockid_t.h
--
-bits/types/time_t.h
--
-bits/types/timer_t.h
--
-stddef.h
--
-bits/stdint-intn.h
--
-endian.h
--
-sys/select.h
--
-sys/sysmacros.h
--
-bits/pthreadtypes.h
--
 

@@ -2,6 +2,59 @@
 Changelog for package usv_gazebo_plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.0 (2019-12-26)
+------------------
+* Make code_check happy.
+* Mod to make use of maxCmd and update to .hgignore
+* Contributors: Brian Bingham <briansbingham@gmail.com>, Carlos Aguero
+
+1.2.6 (2019-10-04)
+------------------
+
+1.2.5 (2019-09-19)
+------------------
+* merging default into branch
+* Changes for code checker
+* Contributors: Brian Bingham <briansbingham@gmail.com>
+
+1.2.4 (2019-09-12)
+------------------
+
+1.2.3 (2019-09-12)
+------------------
+* Minor maintenance updates.
+* Fix style error.
+* Adding a default value for the length_n plugin parameter
+* Contributors: Brian Bingham <briansbingham@gmail.com>, Carlos Aguero, Carlos Aguero <caguero@osrfoundation.org>
+
+1.2.2 (2019-09-06)
+------------------
+
+1.2.1 (2019-09-05)
+------------------
+* updated comments
+* minor cleanup + env flag + disable z
+* Namespace tweaks.
+* Style changes.
+* gazebo 7 bug fix
+* removed from wamv
+* gazebo 7 compatibility
+* force vectors are correct; scaling added
+* Contributors: Carlos Aguero, Rumman Waqar <rumman.waqar05@gmail.com>
+
+1.2.0 (2019-08-19)
+------------------
+* Deterministic wind.
+* Add v3d plugin - this publishes a vecotr based on the world frame velocity in Gazebo
+  Update gps configuration to add gazebo gps and v3d plugins to standard configuration
+* Add plugin for ROS interface to gazebo GPS sensor.
+* added cylinder placeholder
+* incremental
+* added plate and sphere models
+* functional for cubes
+* added force visual plugin
+* Contributors: Carlos Aguero, Jonathan Wheare <jonathan.wheare@flinders.edu.au>, MarshallRawson, Rumman Waqar <rumman.waqar05@gmail.com>
+
 1.1.2 (2019-07-10)
 ------------------
 * usv_gazebo_wind_plugin.hh changes

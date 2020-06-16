@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import oyaml as yaml
+import yaml
 import rospy
 import os
 from collections import OrderedDict
@@ -43,7 +43,6 @@ def main():
 def world_gen(coordinate={}, master={}):
     world = {}
     for axis_name, axis in master.iteritems():
-
         # if a sequence override defined for this axis at this step
         if axis['sequence'] is not None and \
                 coordinate[axis_name] in axis['sequence']:

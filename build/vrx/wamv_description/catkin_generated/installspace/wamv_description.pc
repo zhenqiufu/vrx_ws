@@ -1,8 +1,8 @@
-prefix=/home/scar1et/vrx_ws/install
+prefix=/home/skloe/vrx_ws/install
 
 Name: wamv_description
 Description: Description of wamv_description
-Version: 1.1.2
+Version: 1.3.0
 Cflags: 
-Libs: -L/home/scar1et/vrx_ws/install/lib 
+Libs: -L${prefix}/lib 
 Requires: xacro

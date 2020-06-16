@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "xacro".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "wamv_description"
-PROJECT_SPACE_DIR = "/home/scar1et/vrx_ws/devel"
-PROJECT_VERSION = "1.1.2"
+PROJECT_SPACE_DIR = "/home/skloe/vrx_ws/devel"
+PROJECT_VERSION = "1.3.0"

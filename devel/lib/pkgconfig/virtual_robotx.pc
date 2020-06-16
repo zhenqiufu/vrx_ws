@@ -1,8 +1,0 @@
-prefix=/home/scar1et/vrx_ws/devel
-
-Name: virtual_robotx
-Description: Description of virtual_robotx
-Version: 0.0.0
-Cflags: -I/home/scar1et/vrx_ws/devel/include
-Libs: -L/home/scar1et/vrx_ws/devel/lib 
-Requires: 

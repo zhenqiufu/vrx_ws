@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
+  "/home/skloe/vrx_ws/src/vrx/wave_gazebo/world_models/ocean_waves/model.xacro"
   "CMakeFiles/model_erb_generation"
-  "/home/scar1et/vrx_ws/src/vrx/wave_gazebo/world_models/ocean_waves/model.xacro"
 )
 
 # Per-language clean rules from dependency scanning.

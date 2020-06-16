@@ -185,7 +185,7 @@
 #define __NO_INLINE__ 1
 #define __FLT_MANT_DIG__ 24
 #define __LDBL_DECIMAL_DIG__ 21
-#define __VERSION__ "7.4.0"
+#define __VERSION__ "7.5.0"
 #define __UINT64_C(c) c ## UL
 #define __cpp_unicode_characters 200704
 #define _STDC_PREDEF_H 1
@@ -334,6 +334,7 @@
 #define __FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x
 #define __cpp_runtime_arrays 198712
 #define __UINT64_TYPE__ long unsigned int
+#define dock_placard_msgs_EXPORTS 1
 #define __UINT32_C(c) c ## U
 #define __INTMAX_MAX__ 0x7fffffffffffffffL
 #define __cpp_alias_templates 200704
@@ -356,7 +357,7 @@
 #define __DEC128_MAX_EXP__ 6145
 #define __FLT32X_HAS_QUIET_NAN__ 1
 #define __ATOMIC_CONSUME 1
-#define __GNUC_MINOR__ 4
+#define __GNUC_MINOR__ 5
 #define __GLIBCXX_TYPE_INT_N_0 __int128
 #define __INT_FAST16_WIDTH__ 64
 #define __UINTMAX_MAX__ 0xffffffffffffffffUL

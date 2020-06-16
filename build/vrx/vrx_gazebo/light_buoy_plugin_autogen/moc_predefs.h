@@ -7,6 +7,7 @@
 #define __FLT128_MAX_10_EXP__ 4932
 #define __FLT_MIN__ 1.17549435082228750796873653722224568e-38F
 #define __GCC_IEC_559_COMPLEX 2
+#define BOOST_THREAD_DYN_LINK 1
 #define __cpp_aggregate_nsdmi 201304
 #define __UINT_LEAST8_TYPE__ unsigned char
 #define __SIZEOF_FLOAT80__ 16
@@ -66,6 +67,7 @@
 #define __LDBL_MAX_EXP__ 16384
 #define __FLT128_MIN_EXP__ (-16381)
 #define __WINT_MIN__ 0U
+#define light_buoy_plugin_EXPORTS 1
 #define __linux__ 1
 #define __FLT128_MIN_10_EXP__ (-4931)
 #define __INT_LEAST16_WIDTH__ 16
@@ -168,6 +170,7 @@
 #define __cpp_lambdas 200907
 #define __FLT64X_HAS_QUIET_NAN__ 1
 #define __INT_FAST64_TYPE__ long int
+#define BOOST_ALL_NO_LIB 1
 #define __FLT64_DENORM_MIN__ 4.94065645841246544176568792868221372e-324F64
 #define __DBL_MIN__ double(2.22507385850720138309023271733240406e-308L)
 #define __PIE__ 2
@@ -182,10 +185,12 @@
 #define __DBL_HAS_DENORM__ 1
 #define __FLT32_MIN__ 1.17549435082228750796873653722224568e-38F32
 #define __UINT8_TYPE__ unsigned char
+#define BOOST_PROGRAM_OPTIONS_DYN_LINK 1
 #define __NO_INLINE__ 1
 #define __FLT_MANT_DIG__ 24
 #define __LDBL_DECIMAL_DIG__ 21
-#define __VERSION__ "7.4.0"
+#define __VERSION__ "7.5.0"
+#define BOOST_IOSTREAMS_DYN_LINK 1
 #define __UINT64_C(c) c ## UL
 #define __cpp_unicode_characters 200704
 #define _STDC_PREDEF_H 1
@@ -223,6 +228,7 @@
 #define __GLIBCXX_BITSIZE_INT_N_0 128
 #define __k8 1
 #define __SIG_ATOMIC_MAX__ 0x7fffffff
+#define BOOST_REGEX_DYN_LINK 1
 #define __GCC_ATOMIC_WCHAR_T_LOCK_FREE 2
 #define __cpp_sized_deallocation 201309
 #define __SIZEOF_PTRDIFF_T__ 8
@@ -306,6 +312,7 @@
 #define __SIZEOF_SHORT__ 2
 #define __SSE__ 1
 #define __LDBL_MIN_EXP__ (-16381)
+#define BOOST_DATE_TIME_DYN_LINK 1
 #define __FLT64_MAX__ 1.79769313486231570814527423731704357e+308F64
 #define __WINT_WIDTH__ 32
 #define __INT_LEAST8_MAX__ 0x7f
@@ -314,6 +321,7 @@
 #define __LDBL_MAX_10_EXP__ 4932
 #define __ATOMIC_RELAXED 0
 #define __DBL_EPSILON__ double(2.22044604925031308084726333618164062e-16L)
+#define BOOST_SYSTEM_DYN_LINK 1
 #define __FLT128_MIN__ 3.36210314311209350626267781732175260e-4932F128
 #define _LP64 1
 #define __UINT8_C(c) c
@@ -339,6 +347,7 @@
 #define __cpp_alias_templates 200704
 #define __BYTE_ORDER__ __ORDER_LITTLE_ENDIAN__
 #define __FLT_DENORM_MIN__ 1.40129846432481707092372958328991613e-45F
+#define BOOST_FILESYSTEM_DYN_LINK 1
 #define __INT8_MAX__ 0x7f
 #define __LONG_WIDTH__ 64
 #define __PIC__ 2
@@ -356,7 +365,7 @@
 #define __DEC128_MAX_EXP__ 6145
 #define __FLT32X_HAS_QUIET_NAN__ 1
 #define __ATOMIC_CONSUME 1
-#define __GNUC_MINOR__ 4
+#define __GNUC_MINOR__ 5
 #define __GLIBCXX_TYPE_INT_N_0 __int128
 #define __INT_FAST16_WIDTH__ 64
 #define __UINTMAX_MAX__ 0xffffffffffffffffUL

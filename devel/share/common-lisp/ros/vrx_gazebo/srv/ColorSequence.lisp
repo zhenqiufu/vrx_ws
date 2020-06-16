@@ -109,10 +109,10 @@
   "3969b5fd7ff15f6de27340edae0cd056")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ColorSequence-request>)))
   "Returns full string definition for message of type '<ColorSequence-request>"
-  (cl:format cl:nil "~%~%~%string color1~%string color2~%string color3~%~%~%~%"))
+  (cl:format cl:nil "# Color sequence submission~%~%# Color sequence~%string color1~%string color2~%string color3~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ColorSequence-request)))
   "Returns full string definition for message of type 'ColorSequence-request"
-  (cl:format cl:nil "~%~%~%string color1~%string color2~%string color3~%~%~%~%"))
+  (cl:format cl:nil "# Color sequence submission~%~%# Color sequence~%string color1~%string color2~%string color3~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ColorSequence-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'color1))

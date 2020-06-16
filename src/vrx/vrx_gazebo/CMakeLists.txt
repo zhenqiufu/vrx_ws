@@ -18,6 +18,7 @@ find_package (gazebo REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   message_generation
   wamv_gazebo
+  wave_gazebo
   xacro
   gazebo_dev
   geographic_msgs
@@ -51,7 +52,7 @@ generate_messages(
 
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS wamv_gazebo xacro gazebo_dev geographic_msgs std_msgs message_runtime
+  CATKIN_DEPENDS wamv_gazebo wave_gazebo xacro gazebo_dev geographic_msgs std_msgs message_runtime
 )
 
 set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}") 
@@ -67,6 +68,16 @@ link_directories(${GAZEBO_LIBRARY_DIRS} ${CMAKE_CURRENT_BINARY_DIR}/msgs)
 add_subdirectory(msgs)
 
 add_definitions(${QT_DEFINITIONS})
+
+# Library for displaying waypoint markers
+add_library(waypoint_markers src/waypoint_markers.cc)
+target_link_libraries(waypoint_markers ${catkin_LIBRARIES})
+add_dependencies(waypoint_markers ${catkin_EXPORTED_TARGETS})
+install(TARGETS waypoint_markers
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 # Plugin for setting color of light buoy.
 add_library(light_buoy_plugin src/light_buoy_plugin.cc)
@@ -131,7 +142,8 @@ install(TARGETS navigation_scoring_plugin
 add_library(stationkeeping_scoring_plugin src/stationkeeping_scoring_plugin.cc)
 target_link_libraries(stationkeeping_scoring_plugin
   ${catkin_LIBRARIES}
-  scoring_plugin)
+  scoring_plugin
+  waypoint_markers)
 add_dependencies(stationkeeping_scoring_plugin ${catkin_EXPORTED_TARGETS})
 install(TARGETS stationkeeping_scoring_plugin
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
@@ -143,7 +155,8 @@ install(TARGETS stationkeeping_scoring_plugin
 add_library(wayfinding_scoring_plugin src/wayfinding_scoring_plugin.cc)
 target_link_libraries(wayfinding_scoring_plugin
   ${catkin_LIBRARIES}
-  scoring_plugin)
+  scoring_plugin
+  waypoint_markers)
 add_dependencies(wayfinding_scoring_plugin ${catkin_EXPORTED_TARGETS})
 install(TARGETS wayfinding_scoring_plugin
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
@@ -207,12 +220,16 @@ install(TARGETS perception_scoring_plugin
 set (dock_base_erb_files
   models/dock_2016_base/model.sdf.erb
   models/dock_2018_base/model.sdf.erb
+  models/dock_2016_base_dynamic/model.sdf.erb
+  models/dock_2018_base_dynamic/model.sdf.erb
 )
 
 # Dock files that need to be processed with erb
 set (dock_erb_files
   models/dock_2016/model.sdf.erb
   models/dock_2018/model.sdf.erb
+  models/dock_2016_dynamic/model.sdf.erb
+  models/dock_2018_dynamic/model.sdf.erb
 )
 
 # Process the dock base erb files
@@ -260,6 +277,7 @@ xacro_add_files(
   worlds/stationkeeping_task.world.xacro
   worlds/wayfinding_task.world.xacro
   worlds/wind_test.world.xacro
+  worlds/ocean.world.xacro
   INORDER INSTALL DESTINATION worlds
 )
 # Generate obstacle course

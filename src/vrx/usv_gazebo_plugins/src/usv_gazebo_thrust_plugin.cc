@@ -94,6 +94,7 @@ void UsvThrust::Load(physics::ModelPtr _parent, sdf::ElementPtr _sdf)
   if (_sdf->HasElement("robotNamespace"))
   {
     nodeNamespace = _sdf->Get<std::string>("robotNamespace") + "/";
+    ROS_INFO_STREAM("Thruster namespace <" << nodeNamespace << ">");
   }
 
   this->cmdTimeout = this->SdfParamDouble(_sdf, "cmdTimeout", 1.0);
@@ -359,15 +360,17 @@ void UsvThrust::Update()
       switch (this->thrusters[i].mappingType)
       {
         case 0:
-          tforcev.X() = this->ScaleThrustCmd(this->thrusters[i].currCmd,
-                                           this->thrusters[i].maxCmd,
-                                           this->thrusters[i].maxForceFwd,
-                                           this->thrusters[i].maxForceRev);
+          tforcev.X() = this->ScaleThrustCmd(this->thrusters[i].currCmd/
+                                            this->thrusters[i].maxCmd,
+                                            this->thrusters[i].maxCmd,
+                                            this->thrusters[i].maxForceFwd,
+                                            this->thrusters[i].maxForceRev);
           break;
         case 1:
-          tforcev.X() = this->GlfThrustCmd(this->thrusters[i].currCmd,
-                                         this->thrusters[i].maxForceFwd,
-                                         this->thrusters[i].maxForceRev);
+          tforcev.X() = this->GlfThrustCmd(this->thrusters[i].currCmd/
+                                          this->thrusters[i].maxCmd,
+                                          this->thrusters[i].maxForceFwd,
+                                          this->thrusters[i].maxForceRev);
           break;
         default:
             ROS_FATAL_STREAM("Cannot use mappingType=" <<
@@ -425,15 +428,16 @@ void UsvThrust::RotateEngine(size_t _i, common::Time _stepTime)
 void UsvThrust::SpinPropeller(size_t _i)
 {
   const double kMinInput = 0.1;
-  const double kMaxInput = 1.0;
   const double kMaxEffort = 2.0;
   double effort = 0.0;
 
   physics::JointPtr propeller = this->thrusters[_i].propJoint;
 
   // Calculate effort on propeller joint
-  if (std::abs(this->thrusters[_i].currCmd) > kMinInput)
-    effort = (this->thrusters[_i].currCmd / kMaxInput) * kMaxEffort;
+  if (std::abs(this->thrusters[_i].currCmd/
+              this->thrusters[_i].maxCmd) > kMinInput)
+    effort = (this->thrusters[_i].currCmd /
+              this->thrusters[_i].maxCmd) * kMaxEffort;
 
   propeller->SetForce(0, effort);
 

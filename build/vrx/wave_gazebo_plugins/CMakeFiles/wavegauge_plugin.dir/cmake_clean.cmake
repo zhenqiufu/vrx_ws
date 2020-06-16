@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/skloe/vrx_ws/devel/lib/libwavegauge_plugin.pdb"
+  "/home/skloe/vrx_ws/devel/lib/libwavegauge_plugin.so"
   "CMakeFiles/wavegauge_plugin.dir/src/wavegauge_plugin.cc.o"
-  "/home/scar1et/vrx_ws/devel/lib/libwavegauge_plugin.pdb"
-  "/home/scar1et/vrx_ws/devel/lib/libwavegauge_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

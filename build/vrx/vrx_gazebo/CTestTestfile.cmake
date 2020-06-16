@@ -1,8 +1,9 @@
 # CMake generated Testfile for 
-# Source directory: /home/scar1et/vrx_ws/src/vrx/vrx_gazebo
-# Build directory: /home/scar1et/vrx_ws/build/vrx/vrx_gazebo
+# Source directory: /home/skloe/vrx_ws/src/vrx/vrx_gazebo
+# Build directory: /home/skloe/vrx_ws/build/vrx/vrx_gazebo
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test(_ctest_vrx_gazebo_rostest_test_sandisland.test "/home/scar1et/vrx_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python2" "/opt/ros/melodic/share/catkin/cmake/test/run_tests.py" "/home/scar1et/vrx_ws/build/test_results/vrx_gazebo/rostest-test_sandisland.xml" "--return-code" "/opt/ros/melodic/share/rostest/cmake/../../../bin/rostest --pkgdir=/home/scar1et/vrx_ws/src/vrx/vrx_gazebo --package=vrx_gazebo --results-filename test_sandisland.xml --results-base-dir \"/home/scar1et/vrx_ws/build/test_results\" /home/scar1et/vrx_ws/src/vrx/vrx_gazebo/test/sandisland.test ")
+add_test(_ctest_vrx_gazebo_rostest_test_sandisland.test "/home/skloe/vrx_ws/build/catkin_generated/env_cached.sh" "/usr/bin/python2" "/opt/ros/melodic/share/catkin/cmake/test/run_tests.py" "/home/skloe/vrx_ws/build/test_results/vrx_gazebo/rostest-test_sandisland.xml" "--return-code" "/usr/bin/python2 /opt/ros/melodic/share/rostest/cmake/../../../bin/rostest --pkgdir=/home/skloe/vrx_ws/src/vrx/vrx_gazebo --package=vrx_gazebo --results-filename test_sandisland.xml --results-base-dir \"/home/skloe/vrx_ws/build/test_results\" /home/skloe/vrx_ws/src/vrx/vrx_gazebo/test/sandisland.test ")
+set_tests_properties(_ctest_vrx_gazebo_rostest_test_sandisland.test PROPERTIES  _BACKTRACE_TRIPLES "/opt/ros/melodic/share/catkin/cmake/test/tests.cmake;160;add_test;/opt/ros/melodic/share/rostest/cmake/rostest-extras.cmake;52;catkin_run_tests_target;/opt/ros/melodic/share/rostest/cmake/rostest-extras.cmake;80;add_rostest;/opt/ros/melodic/share/rostest/cmake/rostest-extras.cmake;100;_add_rostest_google_test;/home/skloe/vrx_ws/src/vrx/vrx_gazebo/CMakeLists.txt;312;add_rostest_gtest;/home/skloe/vrx_ws/src/vrx/vrx_gazebo/CMakeLists.txt;0;")
 subdirs("msgs")

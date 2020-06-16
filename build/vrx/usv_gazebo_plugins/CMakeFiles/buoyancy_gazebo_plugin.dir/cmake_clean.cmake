@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
+  "/home/skloe/vrx_ws/devel/lib/libbuoyancy_gazebo_plugin.pdb"
+  "/home/skloe/vrx_ws/devel/lib/libbuoyancy_gazebo_plugin.so"
   "CMakeFiles/buoyancy_gazebo_plugin.dir/src/buoyancy_gazebo_plugin.cc.o"
-  "CMakeFiles/buoyancy_gazebo_plugin.dir/src/shape_volume.cc.o"
   "CMakeFiles/buoyancy_gazebo_plugin.dir/src/polyhedron_volume.cc.o"
-  "/home/scar1et/vrx_ws/devel/lib/libbuoyancy_gazebo_plugin.pdb"
-  "/home/scar1et/vrx_ws/devel/lib/libbuoyancy_gazebo_plugin.so"
+  "CMakeFiles/buoyancy_gazebo_plugin.dir/src/shape_volume.cc.o"
 )
 
 # Per-language clean rules from dependency scanning.

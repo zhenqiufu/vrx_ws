@@ -1,8 +1,8 @@
-# Install script for directory: /home/scar1et/vrx_ws/src/vrx/wamv_description
+# Install script for directory: /home/skloe/vrx_ws/src/vrx/wamv_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/scar1et/vrx_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/skloe/vrx_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,29 +38,29 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/scar1et/vrx_ws/build/vrx/wamv_description/catkin_generated/installspace/wamv_description.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/skloe/vrx_ws/build/vrx/wamv_description/catkin_generated/installspace/wamv_description.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wamv_description/cmake" TYPE FILE FILES
-    "/home/scar1et/vrx_ws/build/vrx/wamv_description/catkin_generated/installspace/wamv_descriptionConfig.cmake"
-    "/home/scar1et/vrx_ws/build/vrx/wamv_description/catkin_generated/installspace/wamv_descriptionConfig-version.cmake"
+    "/home/skloe/vrx_ws/build/vrx/wamv_description/catkin_generated/installspace/wamv_descriptionConfig.cmake"
+    "/home/skloe/vrx_ws/build/vrx/wamv_description/catkin_generated/installspace/wamv_descriptionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wamv_description" TYPE FILE FILES "/home/scar1et/vrx_ws/src/vrx/wamv_description/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wamv_description" TYPE FILE FILES "/home/skloe/vrx_ws/src/vrx/wamv_description/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wamv_description/urdf" TYPE FILE FILES "/home/scar1et/vrx_ws/build/vrx/wamv_description/urdf/wamv_base.urdf")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wamv_description/urdf" TYPE FILE FILES "/home/skloe/vrx_ws/build/vrx/wamv_description/urdf/wamv_base.urdf")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wamv_description/mesh" TYPE DIRECTORY FILES "/home/scar1et/vrx_ws/src/vrx/wamv_description/mesh/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wamv_description/models" TYPE DIRECTORY FILES "/home/skloe/vrx_ws/src/vrx/wamv_description/models/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wamv_description/urdf" TYPE DIRECTORY FILES "/home/scar1et/vrx_ws/src/vrx/wamv_description/urdf/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wamv_description/urdf" TYPE DIRECTORY FILES "/home/skloe/vrx_ws/src/vrx/wamv_description/urdf/")
 endif()
 

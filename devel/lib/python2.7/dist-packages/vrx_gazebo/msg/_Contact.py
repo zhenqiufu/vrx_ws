@@ -10,7 +10,7 @@ import std_msgs.msg
 class Contact(genpy.Message):
   _md5sum = "fc95c38568039a66bfb95d0e976561b9"
   _type = "vrx_gazebo/Contact"
-  _has_header = True #flag to mark the presence of a Header object
+  _has_header = True  # flag to mark the presence of a Header object
   _full_text = """Header header
 string collision1
 string collision2
@@ -51,7 +51,7 @@ string frame_id
     """
     if args or kwds:
       super(Contact, self).__init__(*args, **kwds)
-      #message fields cannot be None, assign default values for those that are
+      # message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
       if self.collision1 is None:
@@ -140,7 +140,7 @@ string frame_id
         self.collision2 = str[start:end]
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 
   def serialize_numpy(self, buff, numpy):
@@ -216,7 +216,7 @@ string frame_id
         self.collision2 = str[start:end]
       return self
     except struct.error as e:
-      raise genpy.DeserializationError(e) #most likely buffer underfill
+      raise genpy.DeserializationError(e)  # most likely buffer underfill
 
 _struct_I = genpy.struct_I
 def _get_struct_I():

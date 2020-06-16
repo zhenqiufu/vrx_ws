@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "wave_gazebo_plugins")
-set(wave_gazebo_plugins_VERSION "1.1.2")
+set(wave_gazebo_plugins_VERSION "1.3.0")
 set(wave_gazebo_plugins_MAINTAINER "Rhys Mainwaring <rhys.mainwaring@me.com>")
 set(wave_gazebo_plugins_PACKAGE_FORMAT "2")
 set(wave_gazebo_plugins_BUILD_DEPENDS "eigen" "gazebo_ros")

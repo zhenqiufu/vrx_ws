@@ -1,9 +1,6 @@
 file(REMOVE_RECURSE
-  "dock_placard_msgs_autogen"
-  "CMakeFiles/dock_placard_msgs_autogen.dir/AutogenOldSettings.cmake"
-  "light_buoy_colors_msgs_autogen"
-  "CMakeFiles/light_buoy_colors_msgs_autogen.dir/AutogenOldSettings.cmake"
   "CMakeFiles/light_buoy_colors_msgs_autogen"
+  "light_buoy_colors_msgs_autogen/mocs_compilation.cpp"
 )
 
 # Per-language clean rules from dependency scanning.

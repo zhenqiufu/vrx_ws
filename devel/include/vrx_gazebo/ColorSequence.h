@@ -57,8 +57,8 @@ struct DataType< ::vrx_gazebo::ColorSequence > {
 };
 
 
-// service_traits::MD5Sum< ::vrx_gazebo::ColorSequenceRequest> should match 
-// service_traits::MD5Sum< ::vrx_gazebo::ColorSequence > 
+// service_traits::MD5Sum< ::vrx_gazebo::ColorSequenceRequest> should match
+// service_traits::MD5Sum< ::vrx_gazebo::ColorSequence >
 template<>
 struct MD5Sum< ::vrx_gazebo::ColorSequenceRequest>
 {
@@ -72,8 +72,8 @@ struct MD5Sum< ::vrx_gazebo::ColorSequenceRequest>
   }
 };
 
-// service_traits::DataType< ::vrx_gazebo::ColorSequenceRequest> should match 
-// service_traits::DataType< ::vrx_gazebo::ColorSequence > 
+// service_traits::DataType< ::vrx_gazebo::ColorSequenceRequest> should match
+// service_traits::DataType< ::vrx_gazebo::ColorSequence >
 template<>
 struct DataType< ::vrx_gazebo::ColorSequenceRequest>
 {
@@ -87,8 +87,8 @@ struct DataType< ::vrx_gazebo::ColorSequenceRequest>
   }
 };
 
-// service_traits::MD5Sum< ::vrx_gazebo::ColorSequenceResponse> should match 
-// service_traits::MD5Sum< ::vrx_gazebo::ColorSequence > 
+// service_traits::MD5Sum< ::vrx_gazebo::ColorSequenceResponse> should match
+// service_traits::MD5Sum< ::vrx_gazebo::ColorSequence >
 template<>
 struct MD5Sum< ::vrx_gazebo::ColorSequenceResponse>
 {
@@ -102,8 +102,8 @@ struct MD5Sum< ::vrx_gazebo::ColorSequenceResponse>
   }
 };
 
-// service_traits::DataType< ::vrx_gazebo::ColorSequenceResponse> should match 
-// service_traits::DataType< ::vrx_gazebo::ColorSequence > 
+// service_traits::DataType< ::vrx_gazebo::ColorSequenceResponse> should match
+// service_traits::DataType< ::vrx_gazebo::ColorSequence >
 template<>
 struct DataType< ::vrx_gazebo::ColorSequenceResponse>
 {

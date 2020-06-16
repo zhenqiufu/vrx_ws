@@ -4,7 +4,7 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <!-- World containing buoyancy test models -->
-<sdf version="1.6" xmlns:xacro="http://ros.org/wiki/xacro">
+<sdf version="1.6">
   <world name="buoyancy_test">
     <scene>
       <grid>false</grid>

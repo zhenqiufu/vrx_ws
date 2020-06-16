@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/skloe/vrx_ws/devel/lib/libWavefieldModelPlugin.pdb"
+  "/home/skloe/vrx_ws/devel/lib/libWavefieldModelPlugin.so"
   "CMakeFiles/WavefieldModelPlugin.dir/src/WavefieldModelPlugin.cc.o"
-  "/home/scar1et/vrx_ws/devel/lib/libWavefieldModelPlugin.pdb"
-  "/home/scar1et/vrx_ws/devel/lib/libWavefieldModelPlugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

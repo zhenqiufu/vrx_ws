@@ -92,9 +92,9 @@ class ColorSequenceRequest {
   static messageDefinition() {
     // Returns full string definition for message
     return `
+    # Color sequence submission
     
-    
-    
+    # Color sequence
     string color1
     string color2
     string color3

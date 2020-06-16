@@ -1,8 +1,8 @@
-# Install script for directory: /home/scar1et/vrx_ws/src/vrx/wave_gazebo
+# Install script for directory: /home/skloe/vrx_ws/src/vrx/wave_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/scar1et/vrx_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/skloe/vrx_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,25 +38,29 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/scar1et/vrx_ws/build/vrx/wave_gazebo/catkin_generated/installspace/wave_gazebo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/skloe/vrx_ws/build/vrx/wave_gazebo/catkin_generated/installspace/wave_gazebo.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wave_gazebo/cmake" TYPE FILE FILES
-    "/home/scar1et/vrx_ws/build/vrx/wave_gazebo/catkin_generated/installspace/wave_gazeboConfig.cmake"
-    "/home/scar1et/vrx_ws/build/vrx/wave_gazebo/catkin_generated/installspace/wave_gazeboConfig-version.cmake"
+    "/home/skloe/vrx_ws/build/vrx/wave_gazebo/catkin_generated/installspace/wave_gazeboConfig.cmake"
+    "/home/skloe/vrx_ws/build/vrx/wave_gazebo/catkin_generated/installspace/wave_gazeboConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wave_gazebo" TYPE FILE FILES "/home/scar1et/vrx_ws/src/vrx/wave_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wave_gazebo" TYPE FILE FILES "/home/skloe/vrx_ws/src/vrx/wave_gazebo/package.xml")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wave_gazebo/world_models" TYPE DIRECTORY FILES "/home/skloe/vrx_ws/src/vrx/wave_gazebo/world_models/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wave_gazebo/worlds" TYPE FILE FILES
-    "/home/scar1et/vrx_ws/build/vrx/wave_gazebo/worlds/ocean.world"
-    "/home/scar1et/vrx_ws/build/vrx/wave_gazebo/worlds/ocean_buoys.world"
-    "/home/scar1et/vrx_ws/build/vrx/wave_gazebo/worlds/ocean_wamv.world"
+    "/home/skloe/vrx_ws/build/vrx/wave_gazebo/worlds/ocean.world"
+    "/home/skloe/vrx_ws/build/vrx/wave_gazebo/worlds/ocean_buoys.world"
+    "/home/skloe/vrx_ws/build/vrx/wave_gazebo/worlds/ocean_wamv.world"
     )
 endif()
 

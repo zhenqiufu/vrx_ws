@@ -1,2 +1,2 @@
-pid:virtual_robotx:vrx/usv_gazebo_plugins:vrx/vrx_gazebo:vrx/wamv_description:vrx/wamv_gazebo:vrx/wave_gazebo:vrx/wave_gazebo_plugins
--DCATKIN_DEVEL_PREFIX=/home/scar1et/vrx_ws/devel -DCMAKE_INSTALL_PREFIX=/home/scar1et/vrx_ws/install -G Unix Makefiles
+rxi:vrx/usv_gazebo_plugins:vrx/usv_msgs:vrx/vrx_gazebo:vrx/wamv_description:vrx/wamv_gazebo:vrx/wave_gazebo:vrx/wave_gazebo_plugins
+-DCATKIN_DEVEL_PREFIX=/home/skloe/vrx_ws/devel -DCMAKE_INSTALL_PREFIX=/home/skloe/vrx_ws/install -G Unix Makefiles

@@ -71,6 +71,22 @@ ros::message_operations::Printer< ::vrx_gazebo::ColorSequenceRequest_<ContainerA
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::vrx_gazebo::ColorSequenceRequest_<ContainerAllocator1> & lhs, const ::vrx_gazebo::ColorSequenceRequest_<ContainerAllocator2> & rhs)
+{
+  return lhs.color1 == rhs.color1 &&
+    lhs.color2 == rhs.color2 &&
+    lhs.color3 == rhs.color3;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::vrx_gazebo::ColorSequenceRequest_<ContainerAllocator1> & lhs, const ::vrx_gazebo::ColorSequenceRequest_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace vrx_gazebo
 
 namespace ros
@@ -78,12 +94,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'vrx_gazebo': ['/home/scar1et/vrx_ws/src/vrx/vrx_gazebo/msg'], 'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 
@@ -148,9 +158,9 @@ struct Definition< ::vrx_gazebo::ColorSequenceRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "\n"
+    return "# Color sequence submission\n"
 "\n"
-"\n"
+"# Color sequence\n"
 "string color1\n"
 "string color2\n"
 "string color3\n"

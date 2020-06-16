@@ -1,10 +1,22 @@
 ## VRX 1
 
+### VRX 1.3.X
 
-### VRX 1.2
+1. Adding camera optical frame:
+    * [Pull request 223](https://bitbucket.org/osrf/vrx/pull-requests/223)
+
+### VRX 1.2.1
+
+1. Ocean reflection and refraction visual effects:
+    * [Pull request 165](https://bitbucket.org/osrf/vrx/pull-requests/165)
+
+### VRX 1.2.0
 
 1. Deterministic wind plugin:
     * [Pull request 157](https://bitbucket.org/osrf/vrx/pull-requests/157)
+    
+1. Waypoint marker visualization:
+    * [Pull request 162](https://bitbucket.org/osrf/vrx/pull-requests/162)    
 
 ### VRX 1.1
 

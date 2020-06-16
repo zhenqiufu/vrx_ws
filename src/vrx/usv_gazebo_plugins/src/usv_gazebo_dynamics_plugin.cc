@@ -1,24 +1,18 @@
 /*
-
-Copyright (c) 2017, Brian Bingham
-All rights reserved
-
-This file is part of the usv_gazebo_dynamics_plugin package,
-known as this Package.
-
-This Package free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This Package s distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this package.  If not, see <http://www.gnu.org/licenses/>.
-
+ * Copyright (C) 2017  Brian Bingham
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
 */
 
 #include <ros/ros.h>
@@ -94,7 +88,7 @@ void UsvDynamicsPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   }
 
   this->waterLevel       = this->SdfParamDouble(_sdf, "waterLevel"  , 0.5);
-  this->waterDensity    = this->SdfParamDouble(_sdf, "waterDensity", 997.7735);
+  this->waterDensity     = this->SdfParamDouble(_sdf, "waterDensity", 997.7735);
   this->paramXdotU       = this->SdfParamDouble(_sdf, "xDotU"       , 5);
   this->paramYdotV       = this->SdfParamDouble(_sdf, "yDotV"       , 5);
   this->paramNdotR       = this->SdfParamDouble(_sdf, "nDotR"       , 1);
@@ -107,10 +101,22 @@ void UsvDynamicsPlugin::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   this->paramMq          = this->SdfParamDouble(_sdf, "mQ"          , 20);
   this->paramNr          = this->SdfParamDouble(_sdf, "nR"          , 20);
   this->paramNrr         = this->SdfParamDouble(_sdf, "nRR"         , 0);
-  this->paramHullRadius  = this->SdfParamDouble(_sdf, "hullRadius"    , 0.213);
+  this->paramHullRadius  = this->SdfParamDouble(_sdf, "hullRadius"  , 0.213);
   this->paramBoatWidth   = this->SdfParamDouble(_sdf, "boatWidth"   , 1.0);
   this->paramBoatLength  = this->SdfParamDouble(_sdf, "boatLength"  , 1.35);
-  this->paramLengthN = _sdf->GetElement("length_n")->Get<int>();
+
+  if (!_sdf->HasElement("length_n"))
+  {
+    int defaultVal = 2;
+    ROS_INFO_STREAM("Parameter <length_n> not found: "
+                    "Using default value of <" << defaultVal << ">.");
+    this->paramLengthN = defaultVal;
+  }
+  else
+  {
+    this->paramLengthN = _sdf->GetElement("length_n")->Get<int>();
+  }
+
 
   //  Wave model
   if (_sdf->HasElement("wave_model"))

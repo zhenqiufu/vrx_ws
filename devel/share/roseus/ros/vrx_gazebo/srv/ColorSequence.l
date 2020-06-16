@@ -129,9 +129,9 @@
 (setf (get vrx_gazebo::ColorSequenceRequest :md5sum-) "3969b5fd7ff15f6de27340edae0cd056")
 (setf (get vrx_gazebo::ColorSequenceRequest :datatype-) "vrx_gazebo/ColorSequenceRequest")
 (setf (get vrx_gazebo::ColorSequenceRequest :definition-)
-      "
+      "# Color sequence submission
 
-
+# Color sequence
 string color1
 string color2
 string color3
@@ -144,9 +144,9 @@ bool success
 (setf (get vrx_gazebo::ColorSequenceResponse :md5sum-) "3969b5fd7ff15f6de27340edae0cd056")
 (setf (get vrx_gazebo::ColorSequenceResponse :datatype-) "vrx_gazebo/ColorSequenceResponse")
 (setf (get vrx_gazebo::ColorSequenceResponse :definition-)
-      "
+      "# Color sequence submission
 
-
+# Color sequence
 string color1
 string color2
 string color3

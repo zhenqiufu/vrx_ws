@@ -19,8 +19,8 @@
       <!-- Parameters for scoring_plugin -->
       <vehicle>wamv</vehicle>
       <task_name>scan_dock</task_name>
-      <initial_state_duration>3</initial_state_duration>
-      <ready_state_duration>3</ready_state_duration>
+      <initial_state_duration>10</initial_state_duration>
+      <ready_state_duration>10</ready_state_duration>
       <running_state_duration>300</running_state_duration>
       <release_joints>
         <joint>
@@ -42,7 +42,8 @@
       <bays>
         <bay>
           <name>bay1</name>
-          <activation_topic>/vrx/dock_2018/bay_1/contain</activation_topic>
+          <internal_activation_topic>/vrx/dock_2018/bay_1/contain</internal_activation_topic>
+          <external_activation_topic>/vrx/dock_2018/bay_1_exterior/contain</external_activation_topic>
           <symbol_topic>/vrx/dock_2018_placard1/symbol</symbol_topic>
           <min_dock_time>10.0</min_dock_time>
           <dock_allowed>false</dock_allowed>
@@ -51,15 +52,14 @@
 
         <bay>
           <name>bay2</name>
-          <activation_topic>/vrx/dock_2018/bay_2/contain</activation_topic>
+          <internal_activation_topic>/vrx/dock_2018/bay_2/contain</internal_activation_topic>
+          <external_activation_topic>/vrx/dock_2018/bay_2_exterior/contain</external_activation_topic>
           <symbol_topic>/vrx/dock_2018_placard2/symbol</symbol_topic>
           <min_dock_time>10.0</min_dock_time>
           <dock_allowed>true</dock_allowed>
-          <announce_symbol>red_cross</announce_symbol>
           <symbol>red_cross</symbol>
         </bay>
       </bays>
-      <placard_color_shape>red_cross</placard_color_shape>
     </plugin>
   </xacro:macro>
 </world>

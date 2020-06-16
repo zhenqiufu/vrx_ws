@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
+  "/home/skloe/vrx_ws/devel/lib/libusv_gazebo_wind_plugin.pdb"
+  "/home/skloe/vrx_ws/devel/lib/libusv_gazebo_wind_plugin.so"
   "CMakeFiles/usv_gazebo_wind_plugin.dir/src/usv_gazebo_wind_plugin.cc.o"
-  "/home/scar1et/vrx_ws/devel/lib/libusv_gazebo_wind_plugin.pdb"
-  "/home/scar1et/vrx_ws/devel/lib/libusv_gazebo_wind_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.
