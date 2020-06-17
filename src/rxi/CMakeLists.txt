@@ -114,6 +114,7 @@ catkin_package(
 include_directories(
 # include
 # ${catkin_INCLUDE_DIRS}
+/opt/ros/melodic/include/
 )
 
 ## Declare a C++ library
@@ -212,3 +213,4 @@ install(DIRECTORY worlds/
 # Install all the model files
 install(DIRECTORY models/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/models)
+

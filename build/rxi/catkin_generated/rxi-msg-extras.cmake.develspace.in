@@ -1,0 +1,2 @@
+set(rxi_MESSAGE_FILES "")
+set(rxi_SERVICE_FILES "")

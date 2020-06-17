@@ -33,6 +33,24 @@ $ sudo apt install cmake mercurial git ruby libeigen3-dev ${GAZ} lib${GAZ}-dev p
 
 
 
+## 第三方库安装
+
+```shell
+# install GeographicLib
+cd third_party/
+tar xvf GeographicLib-1.50.tar.gz
+cd GeographicLib-1.50
+sudo mkdir -m 777 BUILD
+cd BUILD
+cmake ..
+sudo make 
+sudo make install
+```
+
+
+
+
+
 ### install(可能暂时有点问题)
 
 ```shell

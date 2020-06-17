@@ -6,6 +6,7 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("vrx/usv_msgs")
+subdirs("multi_dp")
 subdirs("vrx/wave_gazebo_plugins")
 subdirs("rxi")
 subdirs("vrx/usv_gazebo_plugins")

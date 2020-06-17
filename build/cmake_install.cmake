@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/skloe/vrx_ws/build/gtest/cmake_install.cmake")
   include("/home/skloe/vrx_ws/build/vrx/usv_msgs/cmake_install.cmake")
+  include("/home/skloe/vrx_ws/build/multi_dp/cmake_install.cmake")
   include("/home/skloe/vrx_ws/build/vrx/wave_gazebo_plugins/cmake_install.cmake")
   include("/home/skloe/vrx_ws/build/rxi/cmake_install.cmake")
   include("/home/skloe/vrx_ws/build/vrx/usv_gazebo_plugins/cmake_install.cmake")
