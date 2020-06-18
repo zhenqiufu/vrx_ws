@@ -15,7 +15,7 @@
       <maxCmd>1.0</maxCmd>
       <maxForceFwd>250.0</maxForceFwd>
       <maxForceRev>-100.0</maxForceRev>
-      <maxAngle>${pi/2}</maxAngle>
+      <maxAngle>${pi}</maxAngle>
     </thruster>
   </xacro:macro>
 </plugin>

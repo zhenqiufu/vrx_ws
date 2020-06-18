@@ -33,16 +33,16 @@ sdf/sdf.hh
 -
 
 /home/skloe/vrx_ws/src/vrx/usv_gazebo_plugins/src/usv_gazebo_thrust_plugin.cc
-boost/algorithm/clamp.hpp
--
+usv_gazebo_plugins/usv_gazebo_thrust_plugin.hh
+/home/skloe/vrx_ws/src/vrx/usv_gazebo_plugins/src/usv_gazebo_plugins/usv_gazebo_thrust_plugin.hh
 ros/time.h
+-
+boost/algorithm/clamp.hpp
 -
 cmath
 -
 functional
 -
-usv_gazebo_plugins/usv_gazebo_thrust_plugin.hh
-/home/skloe/vrx_ws/src/vrx/usv_gazebo_plugins/src/usv_gazebo_plugins/usv_gazebo_thrust_plugin.hh
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h

@@ -22,12 +22,12 @@ int main(int argc, char** argv) {
   joystick_msg.data.push_back(0);
   joystick_msg.data.push_back(0);  //初始化三维数组
   initial_joystick(op_js_name);    //打开手柄
-  ros::Rate loop_rate(100);
+  ros::Rate loop_rate(500);
   while (ros::ok()) {
     getjoystick_cmd();  //更新手柄数据
-    joystick_msg.data[0] = joystick_cmd[0];
-    joystick_msg.data[1] = -joystick_cmd[1];
-    joystick_msg.data[2] = joystick_cmd[2] - joystick_cmd[3];
+    joystick_msg.data[0] = -joystick_cmd[1] / 100;
+    joystick_msg.data[1] = -joystick_cmd[0] / 100;
+    joystick_msg.data[2] = joystick_cmd[2] / 200 - joystick_cmd[3] / 200;
     pub_joystick_msg.publish(joystick_msg);
     std::cout << "X: " << joystick_msg.data[0]
               << "  Y:  " << joystick_msg.data[1]

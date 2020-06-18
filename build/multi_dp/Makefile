@@ -76,27 +76,17 @@ CMAKE_BINARY_DIR = /home/skloe/vrx_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -108,6 +98,27 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -121,28 +132,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target test
 test:
@@ -188,64 +188,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/rule
+multi_dp/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+.PHONY : multi_dp/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/rule
+dynamic_reconfigure_gencfg: multi_dp/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
 
-.PHONY : roscpp_generate_messages_py
+.PHONY : dynamic_reconfigure_gencfg
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+dynamic_reconfigure_gencfg/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make multi_dp/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
+.PHONY : dynamic_reconfigure_gencfg/fast
 
 # Convenience name for target.
-multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+.PHONY : multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+dynamic_reconfigure_generate_messages_nodejs: multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_nodejs
+.PHONY : dynamic_reconfigure_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
+dynamic_reconfigure_generate_messages_nodejs/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
 
 # Convenience name for target.
 multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
@@ -263,79 +233,34 @@ rosgraph_msgs_generate_messages_cpp/fast:
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+.PHONY : multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_cpp: multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+dynamic_reconfigure_generate_messages_cpp: multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
 
-.PHONY : roscpp_generate_messages_cpp
+.PHONY : dynamic_reconfigure_generate_messages_cpp
 
 # fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
+dynamic_reconfigure_generate_messages_cpp/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
 
 # Convenience name for target.
-multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+rosgraph_msgs_generate_messages_nodejs: multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : rosgraph_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-multi_dp/CMakeFiles/multi_dp_generate_messages.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_generate_messages.dir/rule
-.PHONY : multi_dp/CMakeFiles/multi_dp_generate_messages.dir/rule
-
-# Convenience name for target.
-multi_dp_generate_messages: multi_dp/CMakeFiles/multi_dp_generate_messages.dir/rule
-
-.PHONY : multi_dp_generate_messages
-
-# fast build rule for target.
-multi_dp_generate_messages/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_generate_messages.dir/build.make multi_dp/CMakeFiles/multi_dp_generate_messages.dir/build
-.PHONY : multi_dp_generate_messages/fast
-
-# Convenience name for target.
-multi_dp/CMakeFiles/thrust_TAK.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/thrust_TAK.dir/rule
-.PHONY : multi_dp/CMakeFiles/thrust_TAK.dir/rule
-
-# Convenience name for target.
-thrust_TAK: multi_dp/CMakeFiles/thrust_TAK.dir/rule
-
-.PHONY : thrust_TAK
-
-# fast build rule for target.
-thrust_TAK/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/thrust_TAK.dir/build.make multi_dp/CMakeFiles/thrust_TAK.dir/build
-.PHONY : thrust_TAK/fast
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 multi_dp/CMakeFiles/joystick.dir/rule:
@@ -353,19 +278,364 @@ joystick/fast:
 .PHONY : joystick/fast
 
 # Convenience name for target.
-multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+.PHONY : multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+dynamic_reconfigure_generate_messages_lisp: multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_nodejs
+.PHONY : dynamic_reconfigure_generate_messages_lisp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+dynamic_reconfigure_generate_messages_lisp/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_lisp: multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+.PHONY : multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_py: multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_py
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_py/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_py/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_generate_messages_eus.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_generate_messages_eus.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+multi_dp_generate_messages_eus: multi_dp/CMakeFiles/multi_dp_generate_messages_eus.dir/rule
+
+.PHONY : multi_dp_generate_messages_eus
+
+# fast build rule for target.
+multi_dp_generate_messages_eus/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_generate_messages_eus.dir/build.make multi_dp/CMakeFiles/multi_dp_generate_messages_eus.dir/build
+.PHONY : multi_dp_generate_messages_eus/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_gencpp.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_gencpp.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_gencpp.dir/rule
+
+# Convenience name for target.
+multi_dp_gencpp: multi_dp/CMakeFiles/multi_dp_gencpp.dir/rule
+
+.PHONY : multi_dp_gencpp
+
+# fast build rule for target.
+multi_dp_gencpp/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_gencpp.dir/build.make multi_dp/CMakeFiles/multi_dp_gencpp.dir/build
+.PHONY : multi_dp_gencpp/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
+.PHONY : multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_eus: multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_eus
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_eus/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make multi_dp/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_eus/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/thrust_TAK.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/thrust_TAK.dir/rule
+.PHONY : multi_dp/CMakeFiles/thrust_TAK.dir/rule
+
+# Convenience name for target.
+thrust_TAK: multi_dp/CMakeFiles/thrust_TAK.dir/rule
+
+.PHONY : thrust_TAK
+
+# fast build rule for target.
+thrust_TAK/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/thrust_TAK.dir/build.make multi_dp/CMakeFiles/thrust_TAK.dir/build
+.PHONY : thrust_TAK/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_lisp: multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+.PHONY : roscpp_generate_messages_lisp
+
+# fast build rule for target.
+roscpp_generate_messages_lisp/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make multi_dp/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_generate_messages.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_generate_messages.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_generate_messages.dir/rule
+
+# Convenience name for target.
+multi_dp_generate_messages: multi_dp/CMakeFiles/multi_dp_generate_messages.dir/rule
+
+.PHONY : multi_dp_generate_messages
+
+# fast build rule for target.
+multi_dp_generate_messages/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_generate_messages.dir/build.make multi_dp/CMakeFiles/multi_dp_generate_messages.dir/build
+.PHONY : multi_dp_generate_messages/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_generate_messages_nodejs.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_generate_messages_nodejs.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+multi_dp_generate_messages_nodejs: multi_dp/CMakeFiles/multi_dp_generate_messages_nodejs.dir/rule
+
+.PHONY : multi_dp_generate_messages_nodejs
+
+# fast build rule for target.
+multi_dp_generate_messages_nodejs/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_generate_messages_nodejs.dir/build.make multi_dp/CMakeFiles/multi_dp_generate_messages_nodejs.dir/build
+.PHONY : multi_dp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/_multi_dp_generate_messages_check_deps_motor_msgs.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/_multi_dp_generate_messages_check_deps_motor_msgs.dir/rule
+.PHONY : multi_dp/CMakeFiles/_multi_dp_generate_messages_check_deps_motor_msgs.dir/rule
+
+# Convenience name for target.
+_multi_dp_generate_messages_check_deps_motor_msgs: multi_dp/CMakeFiles/_multi_dp_generate_messages_check_deps_motor_msgs.dir/rule
+
+.PHONY : _multi_dp_generate_messages_check_deps_motor_msgs
+
+# fast build rule for target.
+_multi_dp_generate_messages_check_deps_motor_msgs/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/_multi_dp_generate_messages_check_deps_motor_msgs.dir/build.make multi_dp/CMakeFiles/_multi_dp_generate_messages_check_deps_motor_msgs.dir/build
+.PHONY : _multi_dp_generate_messages_check_deps_motor_msgs/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_generate_messages_cpp.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_generate_messages_cpp.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+multi_dp_generate_messages_cpp: multi_dp/CMakeFiles/multi_dp_generate_messages_cpp.dir/rule
+
+.PHONY : multi_dp_generate_messages_cpp
+
+# fast build rule for target.
+multi_dp_generate_messages_cpp/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_generate_messages_cpp.dir/build.make multi_dp/CMakeFiles/multi_dp_generate_messages_cpp.dir/build
+.PHONY : multi_dp_generate_messages_cpp/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_geneus.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_geneus.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_geneus.dir/rule
+
+# Convenience name for target.
+multi_dp_geneus: multi_dp/CMakeFiles/multi_dp_geneus.dir/rule
+
+.PHONY : multi_dp_geneus
+
+# fast build rule for target.
+multi_dp_geneus/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_geneus.dir/build.make multi_dp/CMakeFiles/multi_dp_geneus.dir/build
+.PHONY : multi_dp_geneus/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_generate_messages_lisp.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_generate_messages_lisp.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+multi_dp_generate_messages_lisp: multi_dp/CMakeFiles/multi_dp_generate_messages_lisp.dir/rule
+
+.PHONY : multi_dp_generate_messages_lisp
+
+# fast build rule for target.
+multi_dp_generate_messages_lisp/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_generate_messages_lisp.dir/build.make multi_dp/CMakeFiles/multi_dp_generate_messages_lisp.dir/build
+.PHONY : multi_dp_generate_messages_lisp/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_genlisp.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_genlisp.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_genlisp.dir/rule
+
+# Convenience name for target.
+multi_dp_genlisp: multi_dp/CMakeFiles/multi_dp_genlisp.dir/rule
+
+.PHONY : multi_dp_genlisp
+
+# fast build rule for target.
+multi_dp_genlisp/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_genlisp.dir/build.make multi_dp/CMakeFiles/multi_dp_genlisp.dir/build
+.PHONY : multi_dp_genlisp/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_gennodejs.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_gennodejs.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_gennodejs.dir/rule
+
+# Convenience name for target.
+multi_dp_gennodejs: multi_dp/CMakeFiles/multi_dp_gennodejs.dir/rule
+
+.PHONY : multi_dp_gennodejs
+
+# fast build rule for target.
+multi_dp_gennodejs/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_gennodejs.dir/build.make multi_dp/CMakeFiles/multi_dp_gennodejs.dir/build
+.PHONY : multi_dp_gennodejs/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_generate_messages_py.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_generate_messages_py.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+multi_dp_generate_messages_py: multi_dp/CMakeFiles/multi_dp_generate_messages_py.dir/rule
+
+.PHONY : multi_dp_generate_messages_py
+
+# fast build rule for target.
+multi_dp_generate_messages_py/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_generate_messages_py.dir/build.make multi_dp/CMakeFiles/multi_dp_generate_messages_py.dir/build
+.PHONY : multi_dp_generate_messages_py/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_genpy.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_genpy.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_genpy.dir/rule
+
+# Convenience name for target.
+multi_dp_genpy: multi_dp/CMakeFiles/multi_dp_genpy.dir/rule
+
+.PHONY : multi_dp_genpy
+
+# fast build rule for target.
+multi_dp_genpy/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_genpy.dir/build.make multi_dp/CMakeFiles/multi_dp_genpy.dir/build
+.PHONY : multi_dp_genpy/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/multi_dp_gencfg.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/multi_dp_gencfg.dir/rule
+.PHONY : multi_dp/CMakeFiles/multi_dp_gencfg.dir/rule
+
+# Convenience name for target.
+multi_dp_gencfg: multi_dp/CMakeFiles/multi_dp_gencfg.dir/rule
+
+.PHONY : multi_dp_gencfg
+
+# fast build rule for target.
+multi_dp_gencfg/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/multi_dp_gencfg.dir/build.make multi_dp/CMakeFiles/multi_dp_gencfg.dir/build
+.PHONY : multi_dp_gencfg/fast
 
 # Convenience name for target.
 multi_dp/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
@@ -411,6 +681,36 @@ eular_angle: multi_dp/CMakeFiles/eular_angle.dir/rule
 eular_angle/fast:
 	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/eular_angle.dir/build.make multi_dp/CMakeFiles/eular_angle.dir/build
 .PHONY : eular_angle/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/target_rotation.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/target_rotation.dir/rule
+.PHONY : multi_dp/CMakeFiles/target_rotation.dir/rule
+
+# Convenience name for target.
+target_rotation: multi_dp/CMakeFiles/target_rotation.dir/rule
+
+.PHONY : target_rotation
+
+# fast build rule for target.
+target_rotation/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/target_rotation.dir/build.make multi_dp/CMakeFiles/target_rotation.dir/build
+.PHONY : target_rotation/fast
+
+# Convenience name for target.
+multi_dp/CMakeFiles/thrust_pub.dir/rule:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_dp/CMakeFiles/thrust_pub.dir/rule
+.PHONY : multi_dp/CMakeFiles/thrust_pub.dir/rule
+
+# Convenience name for target.
+thrust_pub: multi_dp/CMakeFiles/thrust_pub.dir/rule
+
+.PHONY : thrust_pub
+
+# fast build rule for target.
+thrust_pub/fast:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/thrust_pub.dir/build.make multi_dp/CMakeFiles/thrust_pub.dir/build
+.PHONY : thrust_pub/fast
 
 src/angle_convert/eular_angle.o: src/angle_convert/eular_angle.cpp.o
 
@@ -493,6 +793,60 @@ src/joystick/joystick.cpp.s:
 	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/joystick.dir/build.make multi_dp/CMakeFiles/joystick.dir/src/joystick/joystick.cpp.s
 .PHONY : src/joystick/joystick.cpp.s
 
+src/target_rotation/target_rotation.o: src/target_rotation/target_rotation.cpp.o
+
+.PHONY : src/target_rotation/target_rotation.o
+
+# target to build an object file
+src/target_rotation/target_rotation.cpp.o:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/target_rotation.dir/build.make multi_dp/CMakeFiles/target_rotation.dir/src/target_rotation/target_rotation.cpp.o
+.PHONY : src/target_rotation/target_rotation.cpp.o
+
+src/target_rotation/target_rotation.i: src/target_rotation/target_rotation.cpp.i
+
+.PHONY : src/target_rotation/target_rotation.i
+
+# target to preprocess a source file
+src/target_rotation/target_rotation.cpp.i:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/target_rotation.dir/build.make multi_dp/CMakeFiles/target_rotation.dir/src/target_rotation/target_rotation.cpp.i
+.PHONY : src/target_rotation/target_rotation.cpp.i
+
+src/target_rotation/target_rotation.s: src/target_rotation/target_rotation.cpp.s
+
+.PHONY : src/target_rotation/target_rotation.s
+
+# target to generate assembly for a file
+src/target_rotation/target_rotation.cpp.s:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/target_rotation.dir/build.make multi_dp/CMakeFiles/target_rotation.dir/src/target_rotation/target_rotation.cpp.s
+.PHONY : src/target_rotation/target_rotation.cpp.s
+
+src/target_rotation/thrust_pub.o: src/target_rotation/thrust_pub.cpp.o
+
+.PHONY : src/target_rotation/thrust_pub.o
+
+# target to build an object file
+src/target_rotation/thrust_pub.cpp.o:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/thrust_pub.dir/build.make multi_dp/CMakeFiles/thrust_pub.dir/src/target_rotation/thrust_pub.cpp.o
+.PHONY : src/target_rotation/thrust_pub.cpp.o
+
+src/target_rotation/thrust_pub.i: src/target_rotation/thrust_pub.cpp.i
+
+.PHONY : src/target_rotation/thrust_pub.i
+
+# target to preprocess a source file
+src/target_rotation/thrust_pub.cpp.i:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/thrust_pub.dir/build.make multi_dp/CMakeFiles/thrust_pub.dir/src/target_rotation/thrust_pub.cpp.i
+.PHONY : src/target_rotation/thrust_pub.cpp.i
+
+src/target_rotation/thrust_pub.s: src/target_rotation/thrust_pub.cpp.s
+
+.PHONY : src/target_rotation/thrust_pub.s
+
+# target to generate assembly for a file
+src/target_rotation/thrust_pub.cpp.s:
+	cd /home/skloe/vrx_ws/build && $(MAKE) $(MAKESILENT) -f multi_dp/CMakeFiles/thrust_pub.dir/build.make multi_dp/CMakeFiles/thrust_pub.dir/src/target_rotation/thrust_pub.cpp.s
+.PHONY : src/target_rotation/thrust_pub.cpp.s
+
 src/thruster/thrust_TAK.o: src/thruster/thrust_TAK.cc.o
 
 .PHONY : src/thruster/thrust_TAK.o
@@ -533,7 +887,25 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... _multi_dp_generate_messages_check_deps_motor_msgs"
+	@echo "... dynamic_reconfigure_gencfg"
+	@echo "... dynamic_reconfigure_generate_messages_cpp"
+	@echo "... dynamic_reconfigure_generate_messages_eus"
+	@echo "... dynamic_reconfigure_generate_messages_lisp"
+	@echo "... dynamic_reconfigure_generate_messages_nodejs"
+	@echo "... dynamic_reconfigure_generate_messages_py"
+	@echo "... multi_dp_gencfg"
+	@echo "... multi_dp_gencpp"
 	@echo "... multi_dp_generate_messages"
+	@echo "... multi_dp_generate_messages_cpp"
+	@echo "... multi_dp_generate_messages_eus"
+	@echo "... multi_dp_generate_messages_lisp"
+	@echo "... multi_dp_generate_messages_nodejs"
+	@echo "... multi_dp_generate_messages_py"
+	@echo "... multi_dp_geneus"
+	@echo "... multi_dp_genlisp"
+	@echo "... multi_dp_gennodejs"
+	@echo "... multi_dp_genpy"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_eus"
 	@echo "... roscpp_generate_messages_lisp"
@@ -547,7 +919,9 @@ help:
 	@echo "... eular_angle"
 	@echo "... gps_converter"
 	@echo "... joystick"
+	@echo "... target_rotation"
 	@echo "... thrust_TAK"
+	@echo "... thrust_pub"
 	@echo "... src/angle_convert/eular_angle.o"
 	@echo "... src/angle_convert/eular_angle.i"
 	@echo "... src/angle_convert/eular_angle.s"
@@ -557,6 +931,12 @@ help:
 	@echo "... src/joystick/joystick.o"
 	@echo "... src/joystick/joystick.i"
 	@echo "... src/joystick/joystick.s"
+	@echo "... src/target_rotation/target_rotation.o"
+	@echo "... src/target_rotation/target_rotation.i"
+	@echo "... src/target_rotation/target_rotation.s"
+	@echo "... src/target_rotation/thrust_pub.o"
+	@echo "... src/target_rotation/thrust_pub.i"
+	@echo "... src/target_rotation/thrust_pub.s"
 	@echo "... src/thruster/thrust_TAK.o"
 	@echo "... src/thruster/thrust_TAK.i"
 	@echo "... src/thruster/thrust_TAK.s"

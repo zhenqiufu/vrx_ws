@@ -360,7 +360,7 @@
         <maxCmd>1.0</maxCmd>
         <maxForceFwd>250.0</maxForceFwd>
         <maxForceRev>-100.0</maxForceRev>
-        <maxAngle>1.57079632679</maxAngle>
+        <maxAngle>3.14159265359</maxAngle>
       </thruster>
       <thruster>
         <!-- Required Parameters -->
@@ -375,7 +375,7 @@
         <maxCmd>1.0</maxCmd>
         <maxForceFwd>250.0</maxForceFwd>
         <maxForceRev>-100.0</maxForceRev>
-        <maxAngle>1.57079632679</maxAngle>
+        <maxAngle>3.14159265359</maxAngle>
       </thruster>
     </plugin>
   </gazebo>

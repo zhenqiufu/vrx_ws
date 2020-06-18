@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_generation
+  dynamic_reconfigure
 )
 
 ## System dependencies are found with CMake's conventions
@@ -47,11 +49,13 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
+ add_message_files(
+   
+   FILES
+    motor_msgs.msg
 #   Message1.msg
 #   Message2.msg
-# )
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -69,6 +73,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate added messages and services with any dependencies listed here
  generate_messages(
+   
    DEPENDENCIES
    std_msgs
  )
@@ -88,10 +93,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##     and list every .cfg file to be processed
 
 ## Generate dynamic reconfigure parameters in the 'cfg' folder
-# generate_dynamic_reconfigure_options(
+ generate_dynamic_reconfigure_options(
+ cfg/thrustallocation_dyn.cfg
 #   cfg/DynReconf1.cfg
 #   cfg/DynReconf2.cfg
-# )
+ )
 
 ###################################
 ## catkin specific configuration ##
@@ -104,9 +110,9 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES multi_dp
-#  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
+  LIBRARIES multi_dp
+  CATKIN_DEPENDS roscpp rospy std_msgs
+  DEPENDS system_lib
 )
 
 ###########
@@ -117,6 +123,7 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
  include
+ /opt/qpOASES-3.2.1/include
    /opt/mosek/9.0/tools/platform/linux64x86/h
  /home/skloe/vrx_ws/src/multi_dp/third_party/eigen
   ${catkin_INCLUDE_DIRS}
@@ -236,3 +243,12 @@ target_include_directories(thrust_TAK PRIVATE ${HEADER_DIRECTORY})
 find_library(MOSEK_LIBRARY mosek64 HINTS ${LIBRARY_DIRECTORY})
 target_link_libraries(thrust_TAK PUBLIC ${MOSEK_LIBRARY})
 target_link_libraries(thrust_TAK PUBLIC ${RARE_LIBRARIES} ${catkin_LIBRARIES})
+
+# target rotation
+add_executable(target_rotation src/target_rotation/target_rotation.cpp)
+find_library(qpOASES_LIBRARY qpOASES HINTS /opt/qpOASES-3.2.1/bin)
+target_link_libraries(target_rotation ${catkin_LIBRARIES})
+target_link_libraries(target_rotation ${catkin_LIBRARIES} ${qpOASES_LIBRARY})
+
+add_executable(thrust_pub src/target_rotation/thrust_pub.cpp)
+target_link_libraries(thrust_pub ${catkin_LIBRARIES})

@@ -107,6 +107,7 @@ joystick_EXTERNAL_OBJECTS =
 /home/skloe/vrx_ws/devel/lib/multi_dp/joystick: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
 /home/skloe/vrx_ws/devel/lib/multi_dp/joystick: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 /home/skloe/vrx_ws/devel/lib/multi_dp/joystick: /opt/ros/melodic/lib/libxmlrpcpp.so
+/home/skloe/vrx_ws/devel/lib/multi_dp/joystick: /opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so
 /home/skloe/vrx_ws/devel/lib/multi_dp/joystick: /opt/ros/melodic/lib/libroscpp_serialization.so
 /home/skloe/vrx_ws/devel/lib/multi_dp/joystick: /opt/ros/melodic/lib/librostime.so
 /home/skloe/vrx_ws/devel/lib/multi_dp/joystick: /opt/ros/melodic/lib/libcpp_common.so

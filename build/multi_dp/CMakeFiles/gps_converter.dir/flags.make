@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"multi_dp\"
 
-CXX_INCLUDES = -I/home/skloe/vrx_ws/src/multi_dp/include -I/opt/mosek/9.0/tools/platform/linux64x86/h -I/home/skloe/vrx_ws/src/multi_dp/third_party/eigen -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/skloe/vrx_ws/devel/include -I/home/skloe/vrx_ws/src/multi_dp/include -I/opt/qpOASES-3.2.1/include -I/opt/mosek/9.0/tools/platform/linux64x86/h -I/home/skloe/vrx_ws/src/multi_dp/third_party/eigen -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

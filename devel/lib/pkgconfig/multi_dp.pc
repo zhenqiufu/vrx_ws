@@ -3,6 +3,6 @@ prefix=/home/skloe/vrx_ws/devel
 Name: multi_dp
 Description: Description of multi_dp
 Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
+Cflags: -I/home/skloe/vrx_ws/devel/include
+Libs: -L${prefix}/lib -lmulti_dp
+Requires: roscpp rospy std_msgs

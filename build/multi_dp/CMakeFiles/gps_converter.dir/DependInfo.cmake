@@ -17,7 +17,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/skloe/vrx_ws/devel/include"
   "/home/skloe/vrx_ws/src/multi_dp/include"
+  "/opt/qpOASES-3.2.1/include"
   "/opt/mosek/9.0/tools/platform/linux64x86/h"
   "/home/skloe/vrx_ws/src/multi_dp/third_party/eigen"
   "/opt/ros/melodic/include"

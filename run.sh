@@ -38,6 +38,9 @@ echo "*******************************************"
 
 # 动力定位包启动
 roslaunch multi_dp dp.launch &
+
+roslaunch multi_dp joystick.launch &
+roslaunch multi_dp target_rotation.launch &
 sleep 3
 
 echo "*******************************************"

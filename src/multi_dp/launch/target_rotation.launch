@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<launch>
+
+    <rosparam param="propeller_position_x"> [-2.373776, -2.373776,  2.373776]</rosparam>
+    <rosparam param="propeller_position_y"> [-1.027135,  1.027135, 0]</rosparam>
+    <rosparam param="propeller_position_z"> [0.318237, 0.318237, 0.318237]</rosparam>
+    <!-- <rosparam param="propeller_num"> 6 </rosparam> -->
+    <rosparam param="propeller_K_positive"> [0.025, 0.025, 0.025]</rosparam>
+    <rosparam param="propeller_K_negtive"> [0.01, 0.01, 0.01]</rosparam>
+    <rosparam param="propeller_max_rotation"> [100, 100, 100]</rosparam>
+    <rosparam param="propeller_min_rotation"> [5, 5, 5]</rosparam>
+    <rosparam param="propeller_max_alfa"> [3.14, 3.14, 3.14]</rosparam>
+    <rosparam param="propeller_min_alfa"> [-3.14,-3.14, -3.14]</rosparam>
+    <rosparam param="propeller_delta_alfa"> [0.2, 0.2, 0.2]</rosparam>
+    <rosparam param="propeller_delta_rotation"> [30,30,30]</rosparam>
+    <rosparam param="propeller_max_thrust"> [250,250,250]</rosparam>
+    <rosparam param="propeller_min_thrust"> [1,1,1]</rosparam>
+    <rosparam param="propeller_index"> [1, 1, 1]</rosparam>
+    <rosparam param="max_target_force"> [750, 300, 300]</rosparam>
+    <rosparam param="min_target_force"> [0, 0, 0]</rosparam>
+    <!--
+    <rosparam param="ctl_mode"> 0 </rosparam>    
+-->
+    <!-- mode 0 joystick; mode 1 autodp-->
+
+<!-- 推力分配 -->    
+    <node name= "target_rotation_a" pkg="multi_dp" type = "target_rotation" output = "screen">
+        <param name = "topic_sub" value = "/k_a/joystick"/>
+        <param name = "topic_pub" value = "/k_a/target_rotation"/>
+    </node>
+
+    <node name= "target_rotation_b" pkg="multi_dp" type = "target_rotation" output = "screen">
+        <param name = "topic_sub" value = "/k_b/joystick"/>
+        <param name = "topic_pub" value = "/k_b/target_rotation"/>
+    </node>
+
+
+
+
+
+
+
+<!-- 角度转速映射到船模型 -->
+<!-- a船 -->
+    <node name="thrust_pub_a" pkg="multi_dp" type="thrust_pub" output="screen">
+        <param name = "topic_sub" value = "/k_a/target_rotation"/>
+
+        <param name = "topic_pub_lateral_angle" value = "/defender_a/thrusters/lateral_thrust_angle"/>
+
+        <param name = "topic_pub_lateral_cmd" value = "/defender_a/thrusters/lateral_thrust_cmd"/>
+
+        <param name = "topic_pub_left_angle" value = "/defender_a/thrusters/left_thrust_angle"/>
+
+        <param name = "topic_pub_left_cmd" value = "/defender_a/thrusters/left_thrust_cmd"/>
+
+        <param name = "topic_pub_right_angle" value = "/defender_a/thrusters/right_thrust_angle"/>
+
+        <param name = "topic_pub_right_cmd" value = "/defender_a/thrusters/right_thrust_cmd"/>
+    </node>
+
+<!-- b船 -->
+    <node name="thrust_pub_b" pkg="multi_dp" type="thrust_pub" output="screen">
+        <param name = "topic_sub" value = "/k_b/target_rotation"/>
+        
+        <param name = "topic_pub_lateral_angle" value = "/defender_b/thrusters/lateral_thrust_angle"/>
+
+        <param name = "topic_pub_lateral_cmd" value = "/defender_b/thrusters/lateral_thrust_cmd"/>
+
+        <param name = "topic_pub_left_angle" value = "/defender_b/thrusters/left_thrust_angle"/>
+
+        <param name = "topic_pub_left_cmd" value = "/defender_b/thrusters/left_thrust_cmd"/>
+
+        <param name = "topic_pub_right_angle" value = "/defender_b/thrusters/right_thrust_angle"/>
+
+        <param name = "topic_pub_right_cmd" value = "/defender_b/thrusters/right_thrust_cmd"/>
+    </node>
+    
+
+</launch>

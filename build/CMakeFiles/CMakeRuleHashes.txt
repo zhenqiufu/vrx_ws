@@ -1,8 +1,12 @@
 # Hashes of file build rules.
+4499ad6eb949633b19f482f7b07cec2b /home/skloe/vrx_ws/devel/include/multi_dp/motor_msgs.h
+a6a64cec78fe590e66ddc318c34b3f4b /home/skloe/vrx_ws/devel/include/multi_dp/thrustallocation_dynConfig.h
 e1a7a67bdfd70f563b400fbf8bca62bc /home/skloe/vrx_ws/devel/include/usv_msgs/RangeBearing.h
 9de222b419a92901f8e949667dde90e5 /home/skloe/vrx_ws/devel/include/vrx_gazebo/ColorSequence.h
 669731401fcd436903fc397c854d8ff3 /home/skloe/vrx_ws/devel/include/vrx_gazebo/Contact.h
 be1afd9aa4ac4f184fac85c2c8128290 /home/skloe/vrx_ws/devel/include/vrx_gazebo/Task.h
+e6b186982e6a4e7db3b9fc3c93d7369a /home/skloe/vrx_ws/devel/lib/python2.7/dist-packages/multi_dp/msg/__init__.py
+b5c7352ec55f3dd2d56888da4c12c2c6 /home/skloe/vrx_ws/devel/lib/python2.7/dist-packages/multi_dp/msg/_motor_msgs.py
 b007e4b3c95f88a4254b4f06ea9e8977 /home/skloe/vrx_ws/devel/lib/python2.7/dist-packages/usv_msgs/msg/_RangeBearing.py
 e02e30f1f62029c71a4261bf0dfd2099 /home/skloe/vrx_ws/devel/lib/python2.7/dist-packages/usv_msgs/msg/__init__.py
 ad9691933ef722cb7eb39e1aef1a16f5 /home/skloe/vrx_ws/devel/lib/python2.7/dist-packages/vrx_gazebo/msg/_Contact.py
@@ -10,14 +14,18 @@ ffed19d25caba19353a98eeca6c2ec4f /home/skloe/vrx_ws/devel/lib/python2.7/dist-pac
 87b26d511995681b9298ee3f07beab47 /home/skloe/vrx_ws/devel/lib/python2.7/dist-packages/vrx_gazebo/msg/__init__.py
 648b76474a75ca22d7a2981b47bef3bc /home/skloe/vrx_ws/devel/lib/python2.7/dist-packages/vrx_gazebo/srv/_ColorSequence.py
 5bb8654bf3f02bea5c5e0f56ec36c210 /home/skloe/vrx_ws/devel/lib/python2.7/dist-packages/vrx_gazebo/srv/__init__.py
+d9e4b1949e9367972ec427fa337ecf1a /home/skloe/vrx_ws/devel/share/common-lisp/ros/multi_dp/msg/motor_msgs.lisp
 2f3e4b8b6dc09fc6cd7017f0328417bd /home/skloe/vrx_ws/devel/share/common-lisp/ros/usv_msgs/msg/RangeBearing.lisp
 d8250fc835d4149550734d836c059015 /home/skloe/vrx_ws/devel/share/common-lisp/ros/vrx_gazebo/msg/Contact.lisp
 9d42a61fd3cf5b2ee0f6b7d3af820f48 /home/skloe/vrx_ws/devel/share/common-lisp/ros/vrx_gazebo/msg/Task.lisp
 0f92b442558b6228bd07c29c0e6bb409 /home/skloe/vrx_ws/devel/share/common-lisp/ros/vrx_gazebo/srv/ColorSequence.lisp
+42603fc87ad1f0eb3b91985376ce270d /home/skloe/vrx_ws/devel/share/gennodejs/ros/multi_dp/msg/motor_msgs.js
 b08d4715b13ee6bf7e064f0a2f77b7fe /home/skloe/vrx_ws/devel/share/gennodejs/ros/usv_msgs/msg/RangeBearing.js
 ced40f7f61e0269870bd43eab829558d /home/skloe/vrx_ws/devel/share/gennodejs/ros/vrx_gazebo/msg/Contact.js
 f2160dc9cb4adf8dcf2323c64557070b /home/skloe/vrx_ws/devel/share/gennodejs/ros/vrx_gazebo/msg/Task.js
 945a0c81546845ebabc1b850d887d880 /home/skloe/vrx_ws/devel/share/gennodejs/ros/vrx_gazebo/srv/ColorSequence.js
+4aa57e3ce8101dccb5c8d1e1590788a8 /home/skloe/vrx_ws/devel/share/roseus/ros/multi_dp/manifest.l
+4265131d78d117cfbe6011bfafdefb92 /home/skloe/vrx_ws/devel/share/roseus/ros/multi_dp/msg/motor_msgs.l
 d365c83e6715055aa729d3976d172728 /home/skloe/vrx_ws/devel/share/roseus/ros/usv_msgs/manifest.l
 4cb7043377899a04cc47e458062c3893 /home/skloe/vrx_ws/devel/share/roseus/ros/usv_msgs/msg/RangeBearing.l
 62ed165559fa889cfd9ce4aabf8df7e0 /home/skloe/vrx_ws/devel/share/roseus/ros/vrx_gazebo/manifest.l
@@ -58,6 +66,13 @@ f947ae9f4ede7f08fa00ce809d86118f /home/skloe/vrx_ws/src/vrx/vrx_gazebo/models/do
 74769097e6bd9d892f97baf4e6de7fac /home/skloe/vrx_ws/src/vrx/vrx_gazebo/models/robotx_2018_qualifying_avoid_obstacles_buoys/model.sdf
 2f2c5ff3abdd65c2c694b6d59f1abf01 /home/skloe/vrx_ws/src/vrx/wave_gazebo/world_models/ocean_waves/model.xacro
 d3973c15d1ceea3ca7b2e8a19a49d130 CMakeFiles/clean_test_results
+64ceed0a3803eeaf363c588e5627b053 multi_dp/CMakeFiles/_multi_dp_generate_messages_check_deps_motor_msgs
+286e316e8bbf963c14a13845f6f0514f multi_dp/CMakeFiles/multi_dp_gencfg
+286e316e8bbf963c14a13845f6f0514f multi_dp/CMakeFiles/multi_dp_generate_messages_cpp
+286e316e8bbf963c14a13845f6f0514f multi_dp/CMakeFiles/multi_dp_generate_messages_eus
+286e316e8bbf963c14a13845f6f0514f multi_dp/CMakeFiles/multi_dp_generate_messages_lisp
+286e316e8bbf963c14a13845f6f0514f multi_dp/CMakeFiles/multi_dp_generate_messages_nodejs
+286e316e8bbf963c14a13845f6f0514f multi_dp/CMakeFiles/multi_dp_generate_messages_py
 f5a8478fca2fb591f07127dbf74c6909 rxi/CMakeFiles/rxi__xacro_auto_generate
 f5a8478fca2fb591f07127dbf74c6909 rxi/CMakeFiles/rxi__xacro_auto_generate_to_devel_space_
 24982e572fb340351b9f54c6959d958d rxi/worlds/rxi.world
